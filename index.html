@@ -3,713 +3,197 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0a0e1a">
-<title>Blaugrana</title>
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#070b14">
+<title>CulerZone — Blaugrana</title>
 <style>
-:root{
-  --bg:#070b14;--bg2:#0f1626;--card:#131b2e;--card2:#1a2340;
-  --ink:#eef2ff;--mut:#8894b8;--line:#1e2942;
-  --acc:#00d4ff;--acc2:#7c3aed;--gold:#f5c418;
-  --ok:#22c55e;--warn:#f59e0b;--danger:#ef4444;
-  --r:18px;--rl:24px;--sh:0 8px 32px rgba(0,0,0,.35);
-  --ff: Readex Pro , Segoe UI ,Tahoma,sans-serif;
-}
-@media(prefers-color-scheme:light){
-  :root{--bg:#f5f7fc;--bg2:#fff;--card:#fff;--card2:#f0f3fa;--ink:#0a1224;--mut:#5a6480;--line:#e2e8f4;--sh:0 4px 20px rgba(20,30,70,.08)}
-}
-html[data-th="light"]{--bg:#f5f7fc;--bg2:#fff;--card:#fff;--card2:#f0f3fa;--ink:#0a1224;--mut:#5a6480;--line:#e2e8f4;--sh:0 4px 20px rgba(20,30,70,.08)}
-html[data-th="dark"]{--bg:#070b14;--bg2:#0f1626;--card:#131b2e;--card2:#1a2340;--ink:#eef2ff;--mut:#8894b8;--line:#1e2942;--sh:0 8px 32px rgba(0,0,0,.35)}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:radial-gradient(1000px 500px at 90% -10%,rgba(0,77,152,.15),transparent 60%),radial-gradient(800px 400px at -10% 10%,rgba(165,0,68,.12),transparent 60%),var(--bg);color:var(--ink);font-family:var(--ff);line-height:1.6;min-height:100vh}
-img{display:block;max-width:100%}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-a{color:var(--acc);text-decoration:none}
-h1,h2,h3{font-weight:700;margin:0 0 8px;line-height:1.25}
-h1{font-size:26px}h2{font-size:18px}h3{font-size:15px}
-.mut{color:var(--mut);font-size:13px}
-.top{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-html[data-th="light"] .top{background:rgba(245,247,252,.85)}
-.top-in{max-width:640px;margin:0 auto;padding:12px 14px;display:flex;align-items:center;gap:12px}
-.logo{width:38px;height:38px;flex:none}
-.brand-t{flex:1;min-width:0}
-.brand-t b{display:block;font-size:18px;font-weight:800;background:linear-gradient(135deg,#004d98,#a50044);-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand-t small{display:block;font-size:11px;color:var(--mut)}
-.ib{width:40px;height:40px;border-radius:12px;background:var(--card);display:grid;place-items:center;color:var(--ink);transition:transform .15s}
-.ib:active{transform:scale(.92)}
-.ib svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2}
-main{max-width:640px;margin:0 auto;padding:14px 0 120px}
-.sc{display:none;padding:0 14px}
-.sc.on{display:block;animation:fade .3s ease}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;box-shadow:var(--sh)}
-.card.flat{box-shadow:none;background:var(--card2)}
-.card.pad0{padding:0;overflow:hidden}
-.ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.ch h2{margin:0;font-size:15px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.6px}
-.ch a{font-size:13px;font-weight:600}
-.hero{position:relative;border-radius:var(--rl);padding:22px 18px;background:linear-gradient(135deg,#0a2463 0%,#4a0d3a 100%);color:#fff;overflow:hidden;margin-bottom:14px;box-shadow:0 16px 48px rgba(10,20,60,.45)}
-.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:8px;background:rgba(255,255,255,.15);margin-bottom:14px}
-.hero-teams{display:flex;align-items:center;justify-content:space-around;margin:16px 0}
-.hero-team{flex:1;text-align:center}
-.hero-team .crest-fb{width:66px;height:66px;margin:0 auto 8px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 4px 20px rgba(0,0,0,.3)}
-.hero-team b{display:block;font-size:14px;font-weight:700}
-.hero-vs{font-size:22px;font-weight:800;opacity:.6;padding:0 8px}
-.hero-countdown{display:flex;justify-content:center;gap:8px;margin-top:12px;direction:ltr}
-.hero-countdown>div{background:rgba(0,0,0,.25);border-radius:10px;padding:8px 10px;text-align:center;min-width:56px}
-.hero-countdown b{display:block;font-size:20px;font-variant-numeric:tabular-nums;line-height:1}
-.hero-countdown small{font-size:9px;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
-.hero-prob{display:flex;height:6px;border-radius:3px;overflow:hidden;background:rgba(255,255,255,.15);margin:14px 0 8px}
-.hero-prob i{display:block}
-.hero-prob-labels{display:flex;justify-content:space-between;font-size:11px;opacity:.9}
-.mlist{display:flex;flex-direction:column;gap:8px}
-.mrow{display:flex;align-items:center;gap:10px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;cursor:pointer;transition:background .15s}
-.mrow:active{background:var(--card2)}
-.mrow-t{min-width:56px;text-align:center;font-size:11px;color:var(--mut)}
-.mrow-t b{display:block;font-size:13px;color:var(--ink);font-weight:600}
-.mrow-teams{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
-.mrow-team{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
-.mrow-team .crest-fb{width:24px;height:24px;border-radius:50%;background:#fff;padding:2px;flex:none;font-size:12px}
-.mrow-sc{min-width:44px;text-align:center;font-size:15px;font-weight:800;color:var(--ink);direction:ltr;display:flex;flex-direction:column;gap:4px}
-.mrow-sc .winner{color:var(--ok)}
-.mrow-sc .loser{color:var(--mut)}
-.standings{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.stand-row{display:grid;grid-template-columns:32px 1fr 36px 30px 30px 30px 44px;gap:6px;padding:11px 12px;align-items:center;font-size:13px;border-bottom:1px solid var(--line);position:relative;font-variant-numeric:tabular-nums}
-.stand-row:last-child{border-bottom:0}
-.stand-row.hd{background:var(--card2);font-size:11px;color:var(--mut);font-weight:600;text-transform:uppercase;padding:8px 12px}
-.stand-row.me{background:linear-gradient(90deg,rgba(0,77,152,.15),transparent)}
-.stand-team{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden}
-.stand-team .crest-fb{width:22px;height:22px;border-radius:50%;background:#fff;padding:2px;flex:none;font-size:10px}
-.stand-team span{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:start}
-.stand-pts{font-weight:800;color:var(--ink);text-align:center;font-size:14px}
-.stand-num{text-align:center;color:var(--mut);font-size:12px}
-.stand-rk{font-weight:700;color:var(--mut);text-align:center;font-size:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:700;font-size:14px;transition:transform .12s,opacity .12s;width:100%}
-.btn:active{transform:scale(.97)}
-.btn.ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
-.btn.danger{background:var(--danger)}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;padding:8px 16px;border-radius:20px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--mut);cursor:pointer;transition:all .15s;white-space:nowrap}
-.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var(--mut)}
-input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;background:var(--card2);border:1px solid var(--line);color:var(--ink);font:inherit;font-size:14px}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:-1px}
-textarea{min-height:100px;resize:vertical}
-.squad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
-.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;text-align:center;cursor:pointer;transition:transform .15s;position:relative}
-.pcard:active{transform:scale(.97)}
-.pcard .avatar{width:80px;height:80px;margin:0 auto 8px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#004d98,#a50044);box-shadow:0 4px 16px rgba(0,0,0,.3)}
-.pcard .avatar svg{width:100%;height:100%;object-fit:cover;display:block}
-.pcard .num{position:absolute;top:8px;left:10px;font-size:20px;font-weight:900;color:var(--gold);opacity:.9}
-.pcard .name{font-size:13px;font-weight:700;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pcard .pos{font-size:11px;color:var(--mut)}
-.sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);z-index:100;display:none;align-items:flex-end;justify-content:center}
-.sheet-bg.on{display:flex}
-.sheet{background:var(--bg2);width:100%;max-width:640px;border-radius:24px 24px 0 0;padding:8px 0 calc(20px + env(safe-area-inset-bottom,0px));max-height:90vh;overflow-y:auto;animation:up .3s cubic-bezier(.2,.8,.2,1)}
-@keyframes up{from{transform:translateY(100%)}to{transform:none}}
-.sheet-grip{width:44px;height:4px;background:var(--line);border-radius:2px;margin:0 auto 12px}
-.sheet-in{padding:0 18px}
-.nav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(7,11,20,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--line);padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px))}
-html[data-th="light"] .nav{background:rgba(245,247,252,.92)}
-.nav-in{max-width:640px;margin:0 auto;display:flex;justify-content:space-around;padding:0 8px}
-.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 4px;color:var(--mut);font-size:10.5px;font-weight:600;transition:color .15s;position:relative}
-.nav-btn.on{color:var(--acc)}
-.nav-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
-.nav-btn:active{transform:scale(.92)}
-.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--card);color:var(--ink);border:1px solid var(--line);padding:12px 20px;border-radius:14px;font-size:13px;font-weight:600;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.4);animation:tin .25s}
-@keyframes tin{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
-.empty{text-align:center;padding:40px 20px;color:var(--mut)}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.stat{background:var(--card2);padding:14px 8px;border-radius:14px;text-align:center}
-.stat b{display:block;font-size:22px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
-.stat span{font-size:11px;color:var(--mut)}
-.row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+:root{--bg:#070b14;--panel:#0f1626;--card:#131b2e;--line:#1e2942;--muted:#8894b8;--cyan:#00d4ff;--blue:#004d98;--maroon:#a50044;--gold:#f5c418}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:#fff;margin:0;padding:0 0 calc(82px + env(safe-area-inset-bottom));min-height:100vh}
+.header{display:flex;justify-content:space-between;align-items:center;padding:15px;background:var(--panel);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--maroon));border:1px solid var(--gold);display:grid;place-items:center;font-size:12px;font-weight:900}
+.title{font-size:20px;font-weight:800;color:var(--cyan)}
+.icon-btn{background:none;border:0;color:white;font-size:22px;padding:6px;cursor:pointer}
+#content{padding:12px;max-width:760px;margin:auto;min-height:55vh}
+.section-title{margin:18px 8px 10px;font-size:18px}
+.card{background:var(--card);padding:15px;margin:10px 0;border-radius:14px;border:1px solid var(--line);overflow:hidden}
+.hero{background:radial-gradient(circle at top left,#183c7a 0,#0f234c 40%,#35102e 100%);text-align:center;padding:22px 14px}
+.mut{color:var(--muted);font-size:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
 .row:last-child{border-bottom:0}
-.row .val{color:var(--mut);font-weight:600}
-.tabs{display:flex;gap:4px;background:var(--card2);padding:4px;border-radius:12px;margin-bottom:14px;overflow-x:auto}
-.tabs button{flex:1 0 auto;padding:9px 14px;border-radius:9px;font-size:13px;font-weight:600;color:var(--mut);white-space:nowrap;transition:all .15s}
-.tabs button.on{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.chat-box{height:360px;overflow-y:auto;background:var(--card2);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
-.msg{padding:8px 14px;border-radius:16px;max-width:82%;font-size:14px;line-height:1.5;word-wrap:break-word}
-.msg.me{align-self:flex-start;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff}
-.msg.other{align-self:flex-end;background:var(--card);border:1px solid var(--line)}
-.msg .nm{font-size:10px;opacity:.7;margin-bottom:3px;font-weight:700}
-.msg .tm{font-size:9px;opacity:.6;margin-top:3px;display:block}
-.crest-fb{display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800;background:linear-gradient(135deg,#004d98,#a50044);flex:none}
+.crest{display:inline-flex;justify-content:center;align-items:center;min-width:36px;height:36px;padding:0 5px;border-radius:50%;background:linear-gradient(90deg,var(--blue) 50%,var(--maroon) 50%);border:2px solid var(--gold);color:white;font-size:10px;font-weight:900;margin-left:8px}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(15,22,38,.98);padding:8px 2px calc(8px + env(safe-area-inset-bottom));border-top:1px solid var(--line);z-index:10}
+.nav button{flex:1;min-width:0;background:none;border:0;color:var(--muted);font-size:11px;font-weight:700;padding:6px 1px;cursor:pointer}
+.nav button .emoji{display:block;font-size:20px;margin-bottom:4px}
+.nav button.active{color:var(--cyan)}
+.nav button:focus-visible,.icon-btn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.pill{display:inline-block;border:1px solid #365078;border-radius:99px;padding:5px 10px;color:#c5d7ff;font-size:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.stat{background:#0b1220;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.stat strong{display:block;color:var(--cyan);font-size:18px}
+.empty{padding:24px;text-align:center;color:var(--muted)}
+.small-btn{border:1px solid #365078;border-radius:9px;background:#101d33;color:white;padding:9px 12px;cursor:pointer}
+footer{text-align:center;color:#64718f;font-size:11px;padding:12px}
 </style>
 </head>
 <body>
-
-<header class="top">
-  <div class="top-in">
-    <div id="brandLogo" class="logo"></div>
-    <div class="brand-t"><b>Blaugrana</b><small>لوحة مشجع برشلونة</small></div>
-    <button class="ib" id="themeBtn" aria-label="الثيم">
-      <svg viewBox="0 0 24 24"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.4 1.4M16.6 16.6L18 18M6 18l1.4-1.4M16.6 7.4L18 6"/><circle cx="12" cy="12" r="4"/></svg>
-    </button>
-    <button class="ib" id="settingsBtn" aria-label="الإعدادات">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 00-2-1.2L14 3h-4l-.4 2.6a7 7 0 00-2 1.2l-2.4-1-2 3.4 2 1.6a7 7 0 000 2.4l-2 1.6 2 3.4 2.4-1a7 7 0 002 1.2L10 21h4l.4-2.6a7 7 0 002-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z"/></svg>
-    </button>
-  </div>
+<header class="header">
+  <div class="brand"><div class="logo" aria-hidden="true">FCB</div><div class="title">CulerZone</div></div>
+  <button class="icon-btn" id="settingsBtn" aria-label="الإعدادات" type="button">⚙️</button>
 </header>
 
-<main>
-  <section class="sc on" id="home"></section>
-  <section class="sc" id="matches"></section>
-  <section class="sc" id="standings"></section>
-  <section class="sc" id="squad"></section>
-  <section class="sc" id="more"></section>
-  <section class="sc" id="predictions"></section>
-  <section class="sc" id="chat"></section>
-  <section class="sc" id="profile"></section>
-  <section class="sc" id="settings"></section>
-  <section class="sc" id="news"></section>
-</main>
+<main id="content" aria-live="polite"></main>
 
-<nav class="nav">
-  <div class="nav-in" id="navIn"></div>
+<nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+  <button type="button" data-page="home" class="active"><span class="emoji">🏠</span>الرئيسية</button>
+  <button type="button" data-page="matches"><span class="emoji">⚽</span>المباريات</button>
+  <button type="button" data-page="standings"><span class="emoji">📊</span>الترتيب</button>
+  <button type="button" data-page="squad"><span class="emoji">👥</span>الفريق</button>
+  <button type="button" data-page="more"><span class="emoji">☰</span>المزيد</button>
 </nav>
 
-<div class="sheet-bg" id="sheetBg"><div class="sheet" id="sheet"><div class="sheet-grip"></div><div class="sheet-in" id="sheetIn"></div></div></div>
-
 <script>
-(function(){
- use strict ;
+"use strict";
 
-const $ = id => document.getElementById(id);
-const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
-const ls = { get: (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set: (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } } };
-
-// Clean fallback for logos to prevent any errors
-const LOGOS = {
-   برشلونة :  https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg ,
-   ريال مدريد :  https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg ,
-   أتلتيكو مدريد :  https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg ,
-   إشبيلية :  https://upload.wikimedia.org/wikipedia/en/3/3b/Sevilla_FC_logo.svg ,
-   ريال بيتيس :  https://upload.wikimedia.org/wikipedia/en/1/13/Real_betis_logo.svg ,
-   فالنسيا :  https://upload.wikimedia.org/wikipedia/en/c/ce/Valenciacf.svg ,
-   فياريال :  https://upload.wikimedia.org/wikipedia/en/7/70/Villarreal_CF_logo-en.svg ,
-   ريال سوسيداد :  https://upload.wikimedia.org/wikipedia/en/f/f7/Real_Sociedad_logo.svg ,
-   أتلتيك بلباو :  https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg ,
-   أوساسونا :  https://upload.wikimedia.org/wikipedia/en/1/13/CA_Osasuna_logo.svg ,
-   سيلتا فيغو :  https://upload.wikimedia.org/wikipedia/en/7/7c/RC_Celta_de_Vigo_logo.svg ,
-   خيتافي :  https://upload.wikimedia.org/wikipedia/en/0/0e/Getafe_CF_logo.svg ,
-   رايو فايكانو :  https://upload.wikimedia.org/wikipedia/en/c/c3/Rayo_Vallecano_logo.svg ,
-   إسبانيول :  https://upload.wikimedia.org/wikipedia/en/8/8a/RCD_Espanyol_logo.svg ,
-   ديبورتيفو :  https://upload.wikimedia.org/wikipedia/en/9/94/RC_Deportivo_La_Coru%C3%B1a_logo.svg ,
-   ألافيس :  https://upload.wikimedia.org/wikipedia/en/1/1c/Deportivo_Alaves_logo.svg ,
-   ليفانتي :  https://upload.wikimedia.org/wikipedia/en/7/7b/Levante_UD_logo.svg ,
-   إلتشي :  https://upload.wikimedia.org/wikipedia/en/5/5d/Elche_CF_logo.svg ,
-   مالقة :  https://upload.wikimedia.org/wikipedia/en/6/6a/M%C3%A1laga_CF.svg ,
-   راسينغ :  https://upload.wikimedia.org/wikipedia/en/5/58/Racing_de_Santander_logo.svg ,
-   باريس سان جيرمان :  https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg ,
-   مانشستر سيتي :  https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg ,
-   غلطة سراي :  https://upload.wikimedia.org/wikipedia/commons/f/f6/Galatasaray_Sports_Club_Logo.svg ,
-   فينورد :  https://upload.wikimedia.org/wikipedia/en/6/6d/Feyenoord_logo.svg ,
-   أستون فيلا :  https://upload.wikimedia.org/wikipedia/en/9/9a/Aston_Villa_FC_new_crest.svg ,
-   سبورتينغ :  https://upload.wikimedia.org/wikipedia/en/e/e1/Sporting_Clube_de_Portugal_%28Logo%29.svg ,
-   كومو :  https://upload.wikimedia.org/wikipedia/en/8/8e/Como_1907_logo.svg ,
-   Arsenal :  https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg ,
-   Liverpool :  https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg ,
-   Chelsea :  https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg ,
-   Inter :  https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg ,
-   AC Milan :  https://upload.wikimedia.org/wikipedia/commons/d/d0/AC_Milan_crest_%28white%29.svg ,
-   Juventus :  https://upload.wikimedia.org/wikipedia/commons/b/bc/Juventus_FC_2017_icon_%28black%29.svg ,
-   Napoli :  https://upload.wikimedia.org/wikipedia/commons/2/28/S.S.C._Napoli_logo.svg ,
-   Roma :  https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg ,
-   Lazio :  https://upload.wikimedia.org/wikipedia/en/1/1a/S.S._Lazio_logo.svg ,
-   Bayern :  https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg ,
-   Dortmund :  https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg ,
-   Leverkusen :  https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg ,
-   Monaco :  https://upload.wikimedia.org/wikipedia/en/8/8b/AS_Monaco_FC.svg ,
-   Lyon :  https://upload.wikimedia.org/wikipedia/en/5/5a/Olympique_Lyonnais_logo.svg 
-};
-
-const SQUAD = [
-  [1,  جوان غارسيا ,  GK ,  حارس مرمى ,  🇪🇸 , 25, 0, 0],
-  [13,  فويتشيخ شتشيسني ,  GK ,  حارس مرمى ,  🇵🇱 , 36, 0, 0],
-  [25,  دومينيك ليفاكوفيتش ,  GK ,  حارس مرمى ,  🇭🇷 , 31, 0, 1],
-  [2,  جواو كانسيلو ,  DF ,  ظهير أيمن ,  🇵🇹 , 32, 0, 1],
-  [3,  أليخاندرو بالدي ,  DF ,  ظهير أيسر ,  🇪🇸 , 22, 1, 0],
-  [5,  باو كوباسي ,  DF ,  قلب دفاع ,  🇪🇸 , 19, 1, 0],
-  [12,  تشافي إسبارت ,  DF ,  ظهير أيمن ,  🇪🇸 , 19, 1, 1],
-  [15,  أندرياس كريستنسن ,  DF ,  قلب دفاع ,  🇩🇰 , 30, 0, 0],
-  [18,  جيرارد مارتين ,  DF ,  قلب دفاع ,  🇪🇸 , 24, 0, 0],
-  [23,  جول كوندي ,  DF ,  ظهير أيمن ,  🇫🇷 , 27, 0, 0],
-  [24,  إيريك غارسيا ,  DF ,  قلب دفاع ,  🇪🇸 , 25, 1, 0],
-  [4,  براين فارينياس ,  MF ,  وسط ,  🇪🇸 , 20, 1, 1],
-  [6,  غافي ,  MF ,  وسط ,  🇪🇸 , 22, 1, 0],
-  [7,  فيرمين لوبيز ,  MF ,  وسط مهاجم ,  🇪🇸 , 23, 1, 0],
-  [8,  بيدري ,  MF ,  وسط ,  🇪🇸 , 23, 0, 0],
-  [16,  رودري ,  MF ,  وسط مدافع ,  🇪🇸 , 30, 0, 1],
-  [20,  داني أولمو ,  MF ,  وسط مهاجم ,  🇪🇸 , 28, 1, 0],
-  [21,  فرينكي دي يونغ ,  MF ,  وسط ,  🇳🇱 , 29, 0, 0],
-  [22,  مارك بيرنال ,  MF ,  وسط مدافع ,  🇪🇸 , 19, 1, 0],
-  [9,  غابرييل جيسوس ,  FW ,  مهاجم ,  🇧🇷 , 29, 0, 1],
-  [10,  لامين يامال ,  FW ,  جناح أيمن ,  🇪🇸 , 19, 1, 0],
-  [11,  رافينيا ,  FW ,  جناح أيسر ,  🇧🇷 , 29, 0, 0],
-  [14,  كريم أديمي ,  FW ,  جناح أيمن ,  🇩🇪 , 24, 0, 1],
-  [17,  أنتوني غوردون ,  FW ,  جناح أيسر ,  🏴 , 25, 0, 1],
-  [19,  روني بردغجي ,  FW ,  جناح أيمن ,  🇸🇪 , 20, 0, 0],
-  [27,  جيسي بيسيوو ,  FW ,  جناح أيسر ,  🇧🇪 , 18, 0, 1],
-  [29,  حمزة عبد الكريم ,  FW ,  مهاجم ,  🇪🇬 , 18, 0, 1]
+// بيانات تجريبية للواجهة فقط؛ ليست نتائج مباشرة أو جدولاً رسمياً محدثاً.
+const MATCHES = [
+  {comp:"الدوري الإسباني",home:false,opp:"إشبيلية",score:[3,1],date:"نتيجة تجريبية"},
+  {comp:"الدوري الإسباني",home:true,opp:"خيتافي",score:[3,0],date:"نتيجة تجريبية"},
+  {comp:"دوري أبطال أوروبا",home:false,opp:"باريس سان جيرمان",date:"موعد غير مؤكد",probs:[39,22,39]},
+  {comp:"الدوري الإسباني",home:true,opp:"ريال مدريد",date:"موعد غير مؤكد"}
 ];
 
 const STANDINGS = [
-  [ برشلونة , 8, 0, 0, 24], [ أتلتيكو مدريد , 6, 1, 1, 19], [ ريال بيتيس , 6, 1, 1, 19],
-  [ ريال مدريد , 6, 0, 2, 18], [ إشبيلية , 4, 2, 2, 14], [ ريال سوسيداد , 4, 1, 3, 13],
-  [ ألافيس , 3, 2, 3, 11], [ ديبورتيفو , 2, 5, 2, 11], [ سيلتا فيغو , 1, 5, 2, 8],
-  [ أتلتيك بلباو , 2, 2, 2, 8], [ فياريال , 2, 2, 4, 8], [ إسبانيول , 2, 2, 4, 8],
-  [ رايو فايكانو , 2, 2, 3, 8], [ خيتافي , 2, 2, 4, 8], [ راسينغ , 2, 2, 4, 8],
-  [ أوساسونا , 2, 2, 4, 8], [ ليفانتي , 1, 4, 3, 7], [ إلتشي , 1, 3, 4, 6],
-  [ فالنسيا , 1, 2, 5, 5], [ مالقة , 0, 4, 4, 4]
+  ["برشلونة",8,0,0,24],
+  ["أتلتيكو مدريد",6,1,1,19],
+  ["ريال بيتيس",6,1,1,19],
+  ["ريال مدريد",6,0,2,18],
+  ["إشبيلية",4,2,2,14]
 ];
 
-const OTHER_LEAGUES = {
-   البريميرليغ : [[ Arsenal ,5,0,1,15],[ Liverpool ,5,1,0,16],[ Chelsea ,4,1,1,13],[ Man City ,4,2,0,14],[ Brighton ,4,1,1,13],[ Everton ,3,2,1,11],[ Leeds ,2,3,1,9],[ Brentford ,2,2,2,8],[ Hull City ,2,3,1,9],[ Ipswich ,3,0,3,9]],
-   السيري آ : [[ Inter ,5,1,0,16],[ Lazio ,5,1,0,16],[ Roma ,4,2,0,14],[ AC Milan ,3,3,0,12],[ Juventus ,3,2,1,11],[ Napoli ,3,1,2,10],[ Como ,3,2,1,11],[ Atalanta ,3,0,3,9],[ Cagliari ,4,1,1,13],[ Frosinone ,4,1,2,13]],
-   البوندسليغا : [[ Freiburg ,4,1,0,13],[ Dortmund ,4,1,0,13],[ Bayern ,3,2,0,11],[ Leverkusen ,3,1,1,10],[ Leipzig ,3,0,2,9],[ Augsburg ,2,2,1,8],[ Werder Bremen ,2,2,1,8],[ Frankfurt ,2,2,2,8],[ Mainz ,2,1,2,7],[ Elversberg ,2,1,2,7]],
-   الدوري الفرنسي : [[ Monaco ,4,2,0,14],[ Lille ,4,1,1,13],[ Lyon ,3,2,1,11],[ PSG ,3,2,1,11],[ Paris FC ,3,2,1,11],[ Rennes ,4,1,1,13],[ Toulouse ,2,3,2,9],[ Brest ,2,2,2,8],[ Lorient ,2,2,2,8],[ Nice ,2,2,2,8]]
-};
-
-const MATCHES = [
-  { id:  m1 , comp:  UCL , home: false, opp:  فينورد , iso:  2026-09-09T16:45:00Z , score: [5, 1] },
-  { id:  m2 , comp:  LL , home: true, opp:  فالنسيا , iso:  2026-09-06T14:15:00Z , score: [5, 0] },
-  { id:  m3 , comp:  LL , home: true, opp:  ليفانتي , iso:  2026-09-13T14:15:00Z , score: [4, 2] },
-  { id:  m4 , comp:  LL , home: true, opp:  راسينغ , iso:  2026-09-16T19:30:00Z , score: [7, 2] },
-  { id:  m5 , comp:  LL , home: false, opp:  إشبيلية , iso:  2026-09-19T19:00:00Z , score: [3, 1] },
-  { id:  m6 , comp:  LL , home: true, opp:  خيتافي , iso:  2026-10-10T16:30:00Z , score: [3, 0] },
-  { id:  m7 , comp:  UCL , home: false, opp:  غلطة سراي , iso:  2026-10-13T19:00:00Z , score: [4, 1] },
-  { id:  m8 , comp:  LL , home: false, opp:  ريال بيتيس , iso:  2026-10-17T16:30:00Z , probs: [66.2, 17, 16.8] },
-  { id:  m9 , comp:  UCL , home: false, opp:  باريس سان جيرمان , iso:  2026-10-20T19:00:00Z , probs: [39, 21.7, 39.3] },
-  { id:  m10 , comp:  LL , home: true, opp:  ريال مدريد , iso:  2026-10-25T20:00:00Z  },
-  { id:  m11 , comp:  LL , home: true, opp:  ألافيس , iso:  2026-10-31T20:00:00Z  },
-  { id:  m12 , comp:  UCL , home: true, opp:  أستون فيلا , iso:  2026-11-03T20:00:00Z  },
-  { id:  m13 , comp:  LL , home: false, opp:  أتلتيكو مدريد , iso:  2026-11-08T20:00:00Z  },
-  { id:  m14 , comp:  LL , home: true, opp:  فياريال , iso:  2026-11-22T19:00:00Z  },
-  { id:  m15 , comp:  UCL , home: false, opp:  سبورتينغ , iso:  2027-01-20T20:00:00Z  },
-  { id:  m16 , comp:  UCL , home: true, opp:  كومو , iso:  2027-01-27T20:00:00Z  }
+const SQUAD = [
+  [1,"جوان غارسيا","حارس مرمى"],
+  [2,"كانسيلو","مدافع"],
+  [3,"بالدي","مدافع"],
+  [8,"بيدري","وسط"],
+  [16,"رودري","وسط"],
+  [10,"لامين يامال","مهاجم"],
+  [9,"غابرييل جيسوس","مهاجم"]
 ];
 
-const TRANSFERS_IN = [[ رودري , مانشستر سيتي , نحو 60 مليون € ],[ أنتوني غوردون , نيوكاسل , 80 مليون € ],[ كريم أديمي , بوروسيا دورتموند , 29 مليون € ],[ غابرييل جيسوس , أرسنال , 10 ملايين € + إضافات ],[ جيسي بيسيوو , كلوب بروج , 8.5 مليون € ],[ جواو كانسيلو , الهلال , مجاناً ]];
-const TRANSFERS_OUT = [[ روبرت ليفاندوفسكي , شيكاغو فاير , نهاية العقد ],[ فيران توريس , باريس سان جيرمان , نحو 50 مليون € ],[ رونالد أراوخو , ليفربول , إعارة مع خيار شراء ],[ تير شتيغن , أياكس , إعارة موسم كامل ],[ أنسو فاتي , موناكو , 11 مليون € ]];
-const NEWS = [
-  { title:  برشلونة يتصدر الليغا بـ 24 نقطة كاملة , src:  الموقع الرسمي , body:  ثمانية انتصارات من ثماني مباريات مع 24 هدفاً سجلها الفريق. , at: Date.now() - 3600000 },
-  { title:  لامين يامال يواصل التألق في الموسم الجديد , src:  Mundo Deportivo , body:  الجناح الشاب يسجل ويصنع في كل مباراة تقريباً. , at: Date.now() - 7200000 }
-];
-const COMP_NAMES = {  LL :  الدوري الإسباني ,  UCL :  دوري أبطال أوروبا  };
+const content = document.getElementById("content");
+const navButtons = Array.from(document.querySelectorAll("#nav button"));
 
-const state = {
-  theme: ls.get( bh_theme ,  dark ),
-  predictions: ls.get( bh_preds , {}),
-  chatMsgs: ls.get( bh_chat , []),
-  profile: ls.get( bh_profile , { name:  كولي , handle:  @blaugrana_fan , bio:    }),
-  ratings: ls.get( bh_ratings , {}),
-  aiConfig: ls.get( bh_ai , { endpoint:   , apiKey:   , model:  gpt-4o-mini  })
-};
-
-// Safe logo renderer (No onerror attributes, avoids browser crashes)
-function crest(team, size = 40) {
-  const initial = team.charAt(0);
-  const url = LOGOS[team];
-  if (!url) {
-    return `<div class="crest-fb" style="width:${size}px;height:${size}px;border-radius:50%;font-size:${Math.round(size*0.4)}px">${initial}</div>`;
-  }
-  return `<img src="${url}" alt="${team}" width="${size}" height="${size}" loading="lazy" style="width:${size}px;height:${size}px;border-radius:50%;background:#fff;padding:2px;object-fit:contain;flex:none" onerror="this.style.display= none ;this.nextElementSibling.style.display= flex ;">
-          <div class="crest-fb" style="width:${size}px;height:${size}px;display:none;border-radius:50%;font-size:${Math.round(size*0.4)}px">${initial}</div>`;
+function esc(value) {
+  return String(value).replace(/[&<>" ]/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;", " :"&quot;"," ":"&#39;"
+  })[ch]);
 }
 
-function playerAvatar(p) {
-  const num = p[0], name = p[1];
-  const hash = num * 31 + name.length * 17;
-  const skinTones = [ #f3cfae ,  #e8b894 ,  #d19a6e ,  #a87050 ,  #7a4a2c ];
-  const hairColors = [ #1a120d ,  #3a2616 ,  #6b4a2a ,  #8b5a2b ,  #d4a574 ];
-  const skin = skinTones[hash % skinTones.length];
-  const hair = hairColors[(hash * 3) % hairColors.length];
-  const skinShadow = shadeColor(skin, -18);
-  
-  return `<svg class="avatar-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <radialGradient id="bg${num}" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a3a7a"/><stop offset="100%" stop-color="#0a0f1e"/></radialGradient>
-      <linearGradient id="kit${num}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#004d98"/><stop offset="100%" stop-color="#002a5c"/></linearGradient>
-      <linearGradient id="skin${num}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${shadeColor(skin, 8)}"/><stop offset="100%" stop-color="${skinShadow}"/></linearGradient>
-    </defs>
-    <rect width="100" height="100" fill="url(#bg${num})"/>
-    <path d="M8 100 Q14 68 30 60 L70 60 Q86 68 92 100 Z" fill="url(#kit${num})"/>
-    <path d="M32 60 L38 100 L44 100 L44 60 Z" fill="#a50044" opacity=".85"/>
-    <path d="M56 60 L56 100 L62 100 L68 60 Z" fill="#a50044" opacity=".85"/>
-    <path d="M36 60 Q50 68 64 60 L62 55 Q50 61 38 55 Z" fill="#a50044"/>
-    <ellipse cx="50" cy="55" rx="9" ry="6" fill="${skinShadow}"/>
-    <ellipse cx="50" cy="36" rx="20" ry="23" fill="url(#skin${num})"/>
-    <path d="M30 34 Q30 12 50 12 Q70 12 70 34 Q66 22 56 20 Q50 18 44 20 Q34 22 30 34 Z" fill="${hair}"/>
-    <path d="M30 34 Q28 40 30 44 Q32 38 33 34 Z" fill="${hair}"/><path d="M70 34 Q72 40 70 44 Q68 38 67 34 Z" fill="${hair}"/>
-    <ellipse cx="30" cy="38" rx="3" ry="4" fill="${skinShadow}"/><ellipse cx="70" cy="38" rx="3" ry="4" fill="${skinShadow}"/>
-    <path d="M38 34 Q43 31 48 33" stroke="${hair}" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M52 33 Q57 31 62 34" stroke="${hair}" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-    <ellipse cx="43" cy="38" rx="3" ry="3.5" fill="#fff"/><ellipse cx="57" cy="38" rx="3" ry="3.5" fill="#fff"/>
-    <circle cx="43.5" cy="38.5" r="1.8" fill="#1a1a1a"/><circle cx="57.5" cy="38.5" r="1.8" fill="#1a1a1a"/>
-    <circle cx="44" cy="38" r=".6" fill="#fff"/><circle cx="58" cy="38" r=".6" fill="#fff"/>
-    <path d="M50 40 L48 46 Q50 47.5 52 46" stroke="${skinShadow}" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    <path d="M45 51 Q50 54 55 51" stroke="#8b3a3a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <circle cx="80" cy="78" r="10" fill="#f5c418" stroke="#000" stroke-width="1.5"/><text x="80" y="83" text-anchor="middle" font-size="11" font-weight="900" fill="#000" font-family="Arial">${num}</text>
-  </svg>`;
-}
-
-function shadeColor(hex, percent) {
-  const num = parseInt(hex.slice(1), 16);
-  let r = (num >> 16) + Math.round(2.55 * percent);
-  let g = ((num >> 8) & 0xff) + Math.round(2.55 * percent);
-  let b = (num & 0xff) + Math.round(2.55 * percent);
-  r = Math.max(0, Math.min(255, r)); g = Math.max(0, Math.min(255, g)); b = Math.max(0, Math.min(255, b));
-  return  #  + ((r << 16) | (g << 8) | b).toString(16).padStart(6,  0 );
-}
-
-function fmtDate(iso) { try { return new Date(iso).toLocaleString( ar-IQ , { weekday:  short , day:  numeric , month:  short , hour:  2-digit , minute:  2-digit  }); } catch { return iso; } }
-function fmtTime(iso) { try { return new Date(iso).toLocaleTimeString( ar-IQ , { hour:  2-digit , minute:  2-digit  }); } catch { return   ; } }
-function relTime(ms) { const m = Math.floor((Date.now() - ms) / 60000); if (m < 1) return  الآن ; if (m < 60) return `قبل ${m} دقيقة`; const h = Math.floor(m / 60); if (h < 24) return `قبل ${h} ساعة`; return `قبل ${Math.floor(h / 24)} يوم`; }
-function nextMatch() { const now = Date.now(); return MATCHES.filter(m => !m.score && new Date(m.iso).getTime() > now).sort((a, b) => new Date(a.iso) - new Date(b.iso))[0]; }
-function recentMatches() { return MATCHES.filter(m => m.score).sort((a, b) => new Date(b.iso) - new Date(a.iso)); }
-function toast(msg, dur = 2200) { const t = el( div ,  toast , msg); document.body.appendChild(t); setTimeout(() => { t.style.opacity =  0 ; t.style.transition =  opacity .3s ; setTimeout(() => t.remove(), 300); }, dur); }
-function openSheet(builder) { const s = $( sheetIn ); s.innerHTML =   ; builder(s); $( sheetBg ).classList.add( on ); document.body.style.overflow =  hidden ; }
-function closeSheet() { $( sheetBg ).classList.remove( on ); document.body.style.overflow =   ; }
-$( sheetBg ).addEventListener( click , e => { if (e.target === $( sheetBg )) closeSheet(); });
-
-function applyTheme(t) { state.theme = t; ls.set( bh_theme , t); if (t ===  auto ) document.documentElement.removeAttribute( data-th ); else document.documentElement.setAttribute( data-th , t); }
-
-const ICONS = {
-  home:  <path d="M3 11l9-8 9 8M5 10v10h14V10"/> , ball:  <circle cx="12" cy="12" r="9"/><path d="M12 8l3 2-1 4h-4l-1-4z"/> ,
-  trophy:  <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0zM17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/> , users:  <circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 21a6 6 0 0112 0M17 19a5 5 0 014-4.9"/> ,
-  more:  <circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/> , bell:  <path d="M6 16v-5a6 6 0 1112 0v5l2 2H4zM10 21h4"/> ,
-  chat:  <path d="M4 5h16v11H9l-5 4z"/> , target:  <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/> , chart:  <path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/> ,
-  star:  <path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/> , news:  <path d="M5 4h12v16H5zM17 8h3v10a2 2 0 01-2 2M8 8h6M8 12h6M8 16h4"/> ,
-  user:  <circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/> , sl:  <path d="M4 6h16M4 12h16M4 18h16"/> , swap:  <path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/> ,
-  send:  <path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/> , info:  <circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 12v4"/> , ai:  <path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4a3 3 0 00-3-3zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 0"/> 
-};
-const ic = (name, size = 22) => `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] ||   }</svg>`;
-
-// Boot sequence safely
-try {
-  applyTheme(state.theme);
-  $( brandLogo ).innerHTML = crest( برشلونة , 38);
-} catch(e) { console.error( Boot error 1: , e); }
-
-const NAV_ITEMS = [
-  { id:  home , label:  الرئيسية , icon:  home  }, { id:  matches , label:  المباريات , icon:  ball  },
-  { id:  standings , label:  الترتيب , icon:  chart  }, { id:  squad , label:  الفريق , icon:  users  }, { id:  more , label:  المزيد , icon:  more  }
-];
-
-try {
-  const n = $( navIn );
-  NAV_ITEMS.forEach(item => {
-    const b = el( button ,  nav-btn );
-    b.innerHTML = ic(item.icon, 22) + `<span>${item.label}</span>`;
-    b.onclick = () => go(item.id);
-    b.dataset.id = item.id;
-    n.appendChild(b);
-  });
-} catch(e) { console.error( Boot error 2: , e); }
-
-function go(id) {
-  document.querySelectorAll( .sc ).forEach(s => s.classList.toggle( on , s.id === id));
-  document.querySelectorAll( .nav-btn ).forEach(b => b.classList.toggle( on , b.dataset.id === id || (id ===  predictions  && b.dataset.id ===  more ) || (id ===  chat  && b.dataset.id ===  more ) || (id ===  profile  && b.dataset.id ===  more ) || (id ===  settings  && b.dataset.id ===  more ) || (id ===  news  && b.dataset.id ===  more )));
-  if (id ===  home ) renderHome();
-  else if (id ===  matches ) renderMatches();
-  else if (id ===  standings ) renderStandings();
-  else if (id ===  squad ) renderSquad();
-  else if (id ===  more ) renderMore();
-  else if (id ===  predictions ) renderPredictions();
-  else if (id ===  chat ) renderChat();
-  else if (id ===  profile ) renderProfile();
-  else if (id ===  settings ) renderSettings();
-  else if (id ===  news ) renderNews();
-  window.scrollTo({ top: 0, behavior:  smooth  });
+function teamName(match, isHome) {
+  return isHome ? (match.home ? "برشلونة" : match.opp) : (match.home ? match.opp : "برشلونة");
 }
 
 function renderHome() {
-  const root = $( home ); root.innerHTML =   ;
-  try {
-    const nx = nextMatch();
-    if (nx) {
-      const hero = el( div ,  hero );
-      const probs = nx.probs || estimateProbs(nx);
-      hero.innerHTML = `
-        <span class="hero-tag">${COMP_NAMES[nx.comp]} · المباراة القادمة</span>
-        <div class="hero-teams">
-          <div class="hero-team">${crest(nx.home ?  برشلونة  : nx.opp, 66)}<b>${nx.home ?  برشلونة  : nx.opp}</b></div>
-          <div class="hero-vs">VS</div>
-          <div class="hero-team">${crest(nx.home ? nx.opp :  برشلونة , 66)}<b>${nx.home ? nx.opp :  برشلونة }</b></div>
-        </div>
-        <div class="hero-countdown" data-cd="${nx.iso}">
-          <div><b data-d>--</b><small>يوم</small></div><div><b data-h>--</b><small>ساعة</small></div>
-          <div><b data-m>--</b><small>دقيقة</small></div><div><b data-s>--</b><small>ثانية</small></div>
-        </div>
-        <div class="hero-prob">
-          <i style="width:${probs[0]}%;background:#fff"></i><i style="width:${probs[1]}%;background:rgba(255,255,255,.5)"></i><i style="width:${probs[2]}%;background:#ff6b8a"></i>
-        </div>
-        <div class="hero-prob-labels">
-          <span>برشلونة ${probs[0]}%</span><span>تعادل ${probs[1]}%</span><span>${nx.opp} ${probs[2]}%</span>
-        </div>
-        <div style="font-size:12px;margin-top:10px;opacity:.85">${fmtDate(nx.iso)}</div>`;
-      hero.onclick = () => showMatchDetail(nx);
-      root.appendChild(hero);
-      startCountdown(nx.iso);
-    }
-    
-    const stats = el( div ,  grid3 ); stats.style.marginBottom =  12px ;
-    const barca = STANDINGS[0]; const recent = recentMatches().slice(0, 5);
-    [[1,  المركز ], [barca[4],  نقطة ], [`${recent.filter(m => m.score[0] > m.score[1]).length}/${recent.length}`,  فوز آخر 5 ]].forEach(x => {
-      const d = el( div ,  stat ); d.innerHTML = `<b>${x[0]}</b><span>${x[1]}</span>`; stats.appendChild(d);
-    });
-    root.appendChild(stats);
-
-    const rCard = el( div ,  card );
-    rCard.innerHTML = `<div class="ch"><h2>آخر النتائج</h2><a href="#" data-goto="matches">عرض الكل ←</a></div>`;
-    const rl = el( div ,  mlist ); recent.slice(0, 4).forEach(m => rl.appendChild(matchRow(m)));
-    rCard.appendChild(rl); rCard.querySelector( [data-goto] ).onclick = e => { e.preventDefault(); go( matches ); };
-    root.appendChild(rCard);
-
-    const sCard = el( div ,  card );
-    sCard.innerHTML = `<div class="ch"><h2>الترتيب</h2><a href="#" data-goto="standings">عرض الكل ←</a></div>`;
-    sCard.appendChild(standingsTable(STANDINGS.slice(0, 5)));
-    sCard.querySelector( [data-goto] ).onclick = e => { e.preventDefault(); go( standings ); };
-    root.appendChild(sCard);
-  } catch(e) { root.innerHTML = `<div class="notice err"><div>حدث خطأ في تحميل البيانات: ${e.message}</div></div>`; }
-}
-
-function startCountdown(iso) {
-  clearInterval(window.__cdTimer);
-  const target = new Date(iso).getTime();
-  const wrap = document.querySelector( [data-cd] );
-  if (!wrap) return;
-  const dEl = wrap.querySelector( [data-d] ), hEl = wrap.querySelector( [data-h] ), mEl = wrap.querySelector( [data-m] ), sEl = wrap.querySelector( [data-s] );
-  const tick = () => {
-    const diff = target - Date.now();
-    if (diff <= 0) { dEl.textContent =  00 ; hEl.textContent =  00 ; mEl.textContent =  00 ; sEl.textContent =  00 ; return; }
-    dEl.textContent = String(Math.floor(diff / 86400000)).padStart(2,  0 );
-    hEl.textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,  0 );
-    mEl.textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,  0 );
-    sEl.textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,  0 );
-  };
-  tick(); window.__cdTimer = setInterval(tick, 1000);
-}
-
-function estimateProbs(m) {
-  const barcaPpg = STANDINGS[0][4] / 8;
-  const oppRow = STANDINGS.find(t => t[0] === m.opp);
-  const oppPpg = oppRow ? oppRow[4] / (oppRow[1] + oppRow[2] + oppRow[3]) : 1.6;
-  const diff = barcaPpg - oppPpg; const homeAdv = m.home ? 0.15 : -0.15;
-  const pWin = Math.max(30, Math.min(75, 50 + diff * 25 + homeAdv * 40));
-  const pDraw = 20 + Math.random() * 5; const pLoss = 100 - pWin - pDraw;
-  return [Math.round(pWin), Math.round(pDraw), Math.round(pLoss)];
-}
-
-function matchRow(m) {
-  const d = el( div ,  mrow );
-  const [barca, opp] = m.home ? [ برشلونة , m.opp] : [m.opp,  برشلونة ];
-  const bs = m.score ? (m.home ? m.score[0] : m.score[1]) : null;
-  const os = m.score ? (m.home ? m.score[1] : m.score[0]) : null;
-  const w1 = m.score ? (bs > os ?  winner  : bs < os ?  loser  :   ) :   ;
-  const w2 = m.score ? (os > bs ?  winner  : os < bs ?  loser  :   ) :   ;
-  d.innerHTML = `
-    <div class="mrow-t"><b>${m.score ?  FT  : new Date(m.iso).toLocaleDateString( ar-IQ , { day:  numeric , month:  short  })}</b>${m.score ?    : fmtTime(m.iso)}</div>
-    <div class="mrow-teams">
-      <div class="mrow-team">${crest(barca, 24)}<span>${barca}</span></div>
-      <div class="mrow-team">${crest(opp, 24)}<span>${opp}</span></div>
+  const next = MATCHES[2];
+  let html = `
+    <h2 class="section-title">أهلاً بك في CulerZone 🔵🔴</h2>
+    <section class="card hero">
+      <span class="pill">${esc(next.comp)}</span>
+      <h2>المباراة القادمة</h2>
+      <div style="display:flex;justify-content:center;align-items:center;gap:12px;margin:18px 0">
+        <div><div class="crest">FCB</div><div>برشلونة</div></div>
+        <strong style="font-size:18px">VS</strong>
+        <div><div class="crest" style="background:#26334b">${esc(next.opp.slice(0,3))}</div><div>${esc(next.opp)}</div></div>
+      </div>
+      <p>${esc(next.date)}</p>
+      <p class="mut">بيانات تجريبية — تحقق من المواعيد الرسمية قبل المباراة</p>
+    </section>
+    <div class="stat-grid">
+      <div class="stat"><strong>1899</strong><span class="mut">سنة التأسيس</span></div>
+      <div class="stat"><strong>FCB</strong><span class="mut">فخر كتالونيا</span></div>
+      <div class="stat"><strong>🔵🔴</strong><span class="mut">ألواننا</span></div>
     </div>
-    <div class="mrow-sc"><span class="${w1}">${m.score ? bs :  - }</span><span class="${w2}">${m.score ? os :  - }</span></div>`;
-  d.onclick = () => showMatchDetail(m); return d;
-}
-
-function standingsTable(rows, showZones = true) {
-  const wrap = el( div ,  standings );
-  const header = el( div ,  stand-row hd );
-  header.innerHTML =  <span>#</span><span>الفريق</span><span>لعب</span><span>ف</span><span>ت</span><span>خ</span><span>نقاط</span> ;
-  wrap.appendChild(header);
-  rows.forEach((r, i) => {
-    const row = el( div ,  stand-row ); if (r[0] ===  برشلونة ) row.classList.add( me );
-    row.innerHTML += `
-      <span class="stand-rk">${i + 1}</span>
-      <div class="stand-team">${crest(r[0], 22)}<span>${r[0]}</span></div>
-      <span class="stand-num">${r[1] + r[2] + r[3]}</span><span class="stand-num">${r[1]}</span>
-      <span class="stand-num">${r[2]}</span><span class="stand-num">${r[3]}</span><span class="stand-pts">${r[4]}</span>`;
-    row.style.cursor =  pointer ; row.onclick = () => showTeamDetail(r[0], i); wrap.appendChild(row);
+    <h2 class="section-title">آخر النتائج (بيانات تجريبية)</h2>`;
+  MATCHES.slice(0,2).forEach(m => {
+    const home = m.home ? "برشلونة" : m.opp;
+    const away = m.home ? m.opp : "برشلونة";
+    const score = m.home ? `${m.score[0]} - ${m.score[1]}` : `${m.score[1]} - ${m.score[0]}`;
+    html += `<article class="card row"><div><b>${esc(home)} × ${esc(away)}</b><div class="mut">${esc(m.comp)}</div></div><strong>${score}</strong></article>`;
   });
-  return wrap;
+  return html;
 }
 
 function renderMatches() {
-  const root = $( matches ); root.innerHTML =  <h1 style="margin-bottom:16px">المباريات</h1> ;
-  const upCard = el( div ,  card ); upCard.innerHTML =  <h2 style="margin-bottom:12px">القادمة</h2> ;
-  const upList = el( div ,  mlist ); MATCHES.filter(m => !m.score).sort((a, b) => new Date(a.iso) - new Date(b.iso)).forEach(m => upList.appendChild(matchRow(m)));
-  upCard.appendChild(upList); root.appendChild(upCard);
-  const reCard = el( div ,  card ); reCard.innerHTML =  <h2 style="margin-bottom:12px">النتائج</h2> ;
-  const reList = el( div ,  mlist ); recentMatches().forEach(m => reList.appendChild(matchRow(m)));
-  reCard.appendChild(reList); root.appendChild(reCard);
+  let html = `<h2 class="section-title">المباريات</h2><p class="mut" style="margin:0 10px">المواعيد والنتائج أدناه أمثلة توضيحية وليست بيانات مباشرة.</p>`;
+  MATCHES.forEach(m => {
+    const home = m.home ? "برشلونة" : m.opp;
+    const away = m.home ? m.opp : "برشلونة";
+    const result = m.score ? `<strong>${m.home ? m.score[0] + " - " + m.score[1] : m.score[1] + " - " + m.score[0]}</strong>` : `<span class="pill">${esc(m.date)}</span>`;
+    html += `<article class="card"><div class="mut">${esc(m.comp)}</div><div class="row"><b>${esc(home)} × ${esc(away)}</b>${result}</div><div class="mut">${esc(m.date)}</div></article>`;
+  });
+  return html;
 }
 
 function renderStandings() {
-  const root = $( standings ); root.innerHTML =  <h1 style="margin-bottom:16px">الدوري</h1> ;
-  const tabs = el( div ,  tabs ); const leagues = [[ الليغا , STANDINGS], ...Object.entries(OTHER_LEAGUES)]; let activeLg =  الليغا ;
-  leagues.forEach(([name]) => {
-    const b = el( button , name === activeLg ?  on  :   , name);
-    b.onclick = () => { activeLg = name; tabs.querySelectorAll( button ).forEach(x => x.classList.toggle( on , x.textContent === name)); renderLeagueBody(root, name, leagues); };
-    tabs.appendChild(b);
+  let html = `<h2 class="section-title">ترتيب الليغا</h2><p class="mut" style="margin:0 10px">جدول توضيحي تجريبي، وليس ترتيباً مباشراً.</p><section class="card">`;
+  STANDINGS.forEach((t,i) => {
+    html += `<div class="row" style="${t[0] === "برشلونة" ? "background:#1e2942;border-radius:8px;padding-right:8px;padding-left:8px;" : ""}"><span><b>${i+1}. ${esc(t[0])}</b><div class="mut">لعب ${t[1]+t[2]+t[3]} · فوز ${t[1]} · تعادل ${t[2]} · خسارة ${t[3]}</div></span><strong>${t[4]} نقطة</strong></div>`;
   });
-  root.appendChild(tabs); renderLeagueBody(root, activeLg, leagues);
+  html += `</section>`;
+  return html;
 }
 
-function renderLeagueBody(root, lgName, leagues) {
-  root.querySelectorAll( .league-body ).forEach(x => x.remove());
-  const entry = leagues.find(([n]) => n === lgName); const rows = entry ? entry[1] : STANDINGS;
-  const body = el( div ,  league-body );
-  body.appendChild(standingsTable(rows)); root.appendChild(body);
-}
-
-let squadFilter =  all ;
 function renderSquad() {
-  const root = $( squad ); root.innerHTML =  <h1 style="margin-bottom:16px">الفريق</h1> ;
-  const chips = el( div ,  chips );
-  [[ all ,  الكل ], [ GK ,  الحراس ], [ DF ,  الدفاع ], [ MF ,  الوسط ], [ FW ,  الهجوم ]].forEach(([k, v]) => {
-    const b = el( button ,  chip  + (k === squadFilter ?   on  :   ), v);
-    b.onclick = () => { squadFilter = k; renderSquad(); }; chips.appendChild(b);
+  let html = `<h2 class="section-title">الفريق</h2><p class="mut" style="margin:0 10px">قائمة توضيحية؛ قد لا تعكس التشكيلة الحالية.</p>`;
+  SQUAD.forEach(p => {
+    html += `<article class="card row"><span><span class="crest">${p[0]}</span><b>${esc(p[1])}</b></span><span class="mut">${esc(p[2])}</span></article>`;
   });
-  root.appendChild(chips);
-  const grid = el( div ,  squad-grid );
-  SQUAD.filter(p => squadFilter ===  all  || p[2] === squadFilter).forEach(p => {
-    const c = el( div ,  pcard );
-    c.innerHTML = `<div class="num">#${p[0]}</div><div class="avatar">${playerAvatar(p)}</div><div class="name">${p[1]}</div><div class="pos">${p[4]} ${p[3]} · ${p[5]} سنة</div>`;
-    c.onclick = () => showPlayerDetail(p); grid.appendChild(c);
-  });
-  root.appendChild(grid);
+  return html;
 }
 
 function renderMore() {
-  const root = $( more ); root.innerHTML =  <h1 style="margin-bottom:16px">المزيد</h1> ;
-  const card = el( div ,  card pad0 );
-  [ { id:  predictions , label:  التوقعات , icon:  target  }, { id:  chat , label:  المحادثة , icon:  chat  }, { id:  news , label:  الأخبار , icon:  news  }, { id:  profile , label:  ملفي , icon:  user  }, { id:  settings , label:  الإعدادات , icon:  sl  } ].forEach(t => {
-    const r = el( div ,  row ); r.style.cssText =  padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:12px ;
-    r.innerHTML = `<span style="color:var(--acc);flex:none">${ic(t.icon, 24)}</span><div style="flex:1"><b style="display:block;font-size:14px">${t.label}</b></div><span class="mut">‹</span>`;
-    r.onclick = () => go(t.id); card.appendChild(r);
-  });
-  root.appendChild(card);
+  return `<h2 class="section-title">المزيد</h2>
+    <section class="card"><h3>عن CulerZone</h3><p>مساحة جماهيرية لعشاق برشلونة، تجمع الأخبار والمباريات والنتائج ومعلومات الفريق في واجهة واحدة.</p><p class="mut">هذه نسخة أولية ببيانات تجريبية، ولا تتصل حالياً بمصدر أخبار أو نتائج مباشرة.</p></section>
+    <section class="card"><h3>الميزات القادمة</h3><p>📰 أخبار النادي</p><p>📅 جدول مباريات محدث</p><p>📈 إحصائيات وترتيب موثوق</p><p>🔔 تنبيهات المباريات</p></section>`;
 }
 
-function renderPredictions() {
-  const root = $( predictions );
-  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">توقعاتي</h1> ;
-  const card = el( div ,  card ); card.innerHTML =  <h2 style="margin-bottom:12px">توقع نتائج المباريات القادمة</h2> ;
-  MATCHES.filter(m => !m.score).sort((a, b) => new Date(a.iso) - new Date(b.iso)).forEach(m => {
-    const row = el( div ,  row ); const p = state.predictions[m.id] || [  ,   ];
-    row.innerHTML = `<span style="flex:1;font-size:13px">${m.home ?  برشلونة  : m.opp}</span><input type="number" style="width:40px;padding:4px;text-align:center" value="${p[0]}" onchange="window.__savePred( ${m.id} ,0,this.value)"><span style="margin:0 8px">-</span><input type="number" style="width:40px;padding:4px;text-align:center" value="${p[1]}" onchange="window.__savePred( ${m.id} ,1,this.value)"><span style="flex:1;text-align:left;font-size:13px">${m.home ? m.opp :  برشلونة }</span>`;
-    card.appendChild(row);
-  });
-  root.appendChild(card);
-}
-
-window.__backToMore = () => go( more );
-window.__savePred = (id, i, val) => { if(!state.predictions[id]) state.predictions[id] = [  ,  ]; state.predictions[id][i] = val; ls.set( bh_preds , state.predictions); toast( تم الحفظ ✓ ); };
-
-function renderChat() {
-  const root = $( chat );
-  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">المحادثة</h1> ;
-  const card = el( div ,  card pad0 ); card.style.padding =  14px ;
-  const box = el( div ,  chat-box );
-  state.chatMsgs.slice(-50).forEach(m => {
-    const d = el( div ,  msg   + (m.me ?  me  :  other ));
-    d.innerHTML = `${m.me ?    : `<div class="nm">${m.n}</div>`}${m.t}`; box.appendChild(d);
-  });
-  card.appendChild(box);
-  const form = el( div ); form.style.cssText =  display:flex;gap:8px ;
-  const inp = el( input ); inp.placeholder =  اكتب رسالة… ; inp.style.cssText =  flex:1;padding:12px 16px;border-radius:24px;margin-top:8px ;
-  const send = el( button ,  btn ); send.style.cssText =  width:auto;padding:12px 16px;border-radius:24px;margin-top:8px ; send.innerHTML = ic( send , 20);
-  send.onclick = () => {
-    if (!inp.value.trim()) return;
-    const msg = { n: state.profile.name, t: inp.value.trim(), me: true };
-    state.chatMsgs.push(msg); ls.set( bh_chat , state.chatMsgs); box.appendChild(el( div ,  msg me , msg.t)); inp.value =   ; box.scrollTop = box.scrollHeight;
+function showPage(page) {
+  const pages = {
+    home: renderHome,
+    matches: renderMatches,
+    standings: renderStandings,
+    squad: renderSquad,
+    more: renderMore
   };
-  form.appendChild(inp); form.appendChild(send); card.appendChild(form); root.appendChild(card);
-}
-
-function renderProfile() {
-  const root = $( profile );
-  root.innerHTML = `<button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button>
-    <h1 style="margin-bottom:16px">ملفي</h1>
-    <div class="card" style="text-align:center;padding:24px">
-      <div style="width:96px;height:96px;margin:0 auto 12px;border-radius:50%;background:linear-gradient(135deg,#004d98,#a50044);display:grid;place-items:center;font-size:36px;font-weight:900;color:#fff">${state.profile.name.charAt(0)}</div>
-      <b style="display:block;font-size:22px">${state.profile.name}</b>
-      <div class="mut" style="margin-top:4px">${state.profile.handle}</div>
-    </div>`;
-}
-
-function renderSettings() {
-  const root = $( settings );
-  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">الإعدادات</h1> ;
-  const themeCard = el( div ,  card ); themeCard.innerHTML =  <h2 style="margin-bottom:12px">المظهر</h2> ;
-  const themeTabs = el( div ,  tabs );
-  [[ dark ,  ليلي ], [ light ,  نهاري ]].forEach(([k, v]) => {
-    const b = el( button , state.theme === k ?  on  :   , v); b.onclick = () => { applyTheme(k); renderSettings(); }; themeTabs.appendChild(b);
+  if (!pages[page]) page = "home";
+  try {
+    content.innerHTML = pages[page]();
+  } catch (error) {
+    console.error("CulerZone render error:", error);
+    content.innerHTML = `<section class="card"><h2>تعذر عرض الصفحة</h2><p>حدث خطأ أثناء عرض المحتوى. أغلق التطبيق وافتحه مجدداً.</p></section>`;
+  }
+  navButtons.forEach(button => {
+    const active = button.dataset.page === page;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-current", active ? "page" : "false");
   });
-  themeCard.appendChild(themeTabs); root.appendChild(themeCard);
-  
-  const aiCard = el( div ,  card );
-  aiCard.innerHTML = `<h2 style="margin-bottom:8px">الذكاء الاصطناعي</h2><div class="notice info"><div>أضف مفتاح API هنا لتشغيل ميزة التلخيص.</div></div>`;
-  const keyInp = el( input ); keyInp.type =  password ; keyInp.value = state.aiConfig.apiKey; keyInp.placeholder =  sk-... ;
-  const saveAI = el( button ,  btn ,  حفظ المفتاح ); saveAI.style.marginTop =  12px ;
-  saveAI.onclick = () => { state.aiConfig.apiKey = keyInp.value; ls.set( bh_ai , state.aiConfig); toast( تم الحفظ ); };
-  aiCard.appendChild(el( label , null,  المفتاح )); aiCard.appendChild(keyInp); aiCard.appendChild(saveAI); root.appendChild(aiCard);
+  window.scrollTo(0,0);
 }
 
-function renderNews() {
-  const root = $( news );
-  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">الأخبار</h1> ;
-  NEWS.forEach(n => {
-    const c = el( div ,  card );
-    c.innerHTML = `<h3>${n.title}</h3><div class="mut" style="font-size:12px;margin-bottom:8px">${n.src}</div><div style="font-size:14px;">${n.body}</div>`;
-    root.appendChild(c);
-  });
-}
+navButtons.forEach(button => {
+  button.addEventListener("click", () => showPage(button.dataset.page));
+});
 
-function showMatchDetail(m) {
-  openSheet(s => {
-    const [barca, opp] = m.home ? [ برشلونة , m.opp] : [m.opp,  برشلونة ];
-    s.innerHTML = `
-      <div style="text-align:center;margin-bottom:16px">
-        <div class="mut" style="margin-bottom:8px">${COMP_NAMES[m.comp]} · ${fmtDate(m.iso)}</div>
-        <div style="display:flex;justify-content:space-around;align-items:center;margin:16px 0">
-          <div style="flex:1;text-align:center">${crest(barca, 60)}<div style="margin-top:6px;font-weight:700">${barca}</div></div>
-          <div style="font-size:24px;font-weight:800;color:var(--mut)">${m.score ? `${m.score[0]} - ${m.score[1]}` :  VS }</div>
-          <div style="flex:1;text-align:center">${crest(opp, 60)}<div style="margin-top:6px;font-weight:700">${opp}</div></div>
-        </div>
-      </div>`;
-    const close = el( button ,  btn ,  إغلاق ); close.style.marginTop =  20px ; close.onclick = closeSheet; s.appendChild(close);
-  });
-}
+document.getElementById("settingsBtn").addEventListener("click", () => {
+  alert("الإعدادات ستتوفر في تحديث لاحق.");
+});
 
-function showPlayerDetail(p) {
-  openSheet(s => {
-    s.innerHTML = `
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
-        <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:#000">${playerAvatar(p)}</div>
-        <div><b style="font-size:22px">${p[1]}</b><div class="mut">${p[4]} ${p[3]} · #${p[0]}</div></div>
-      </div>`;
-    const close = el( button ,  btn ,  إغلاق ); close.style.marginTop =  16px ; close.onclick = closeSheet; s.appendChild(close);
-  });
-}
+window.addEventListener("error", event => {
+  console.error("CulerZone JavaScript error:", event.message);
+});
 
-function showTeamDetail(team, idx) {
-  openSheet(s => {
-    const row = STANDINGS.find(t => t[0] === team) || [team, 0, 0, 0, 0];
-    s.innerHTML = `<div style="text-align:center;margin-bottom:16px">${crest(team, 80)}<h2 style="margin-top:12px">${team}</h2><div class="mut">المركز ${idx + 1} · ${row[4]} نقطة</div></div>`;
-    const close = el( button ,  btn ,  إغلاق ); close.style.marginTop =  16px ; close.onclick = closeSheet; s.appendChild(close);
-  });
-}
-
-$( themeBtn ).onclick = () => { applyTheme(state.theme ===  dark  ?  light  :  dark ); if (document.getElementById( settings ).classList.contains( on )) renderSettings(); toast( تم تغيير المظهر ); };
-$( settingsBtn ).onclick = () => go( settings );
-document.addEventListener( keydown , e => { if (e.key ===  Escape ) closeSheet(); });
-
-go( home );
-})();
+showPage("home");
 </script>
 </body>
 </html>
