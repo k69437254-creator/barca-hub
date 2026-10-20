@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
@@ -198,4 +198,518 @@ const LOGOS = {
    رايو فايكانو :  https://upload.wikimedia.org/wikipedia/en/c/c3/Rayo_Vallecano_logo.svg ,
    إسبانيول :  https://upload.wikimedia.org/wikipedia/en/8/8a/RCD_Espanyol_logo.svg ,
    ديبورتيفو :  https://upload.wikimedia.org/wikipedia/en/9/94/RC_Deportivo_La_Coru%C3%B1a_logo.svg ,
-   ألافيس :  https://upload.wikimedia.org/wikipedia/en/1/1c/Deportivo_
+   ألافيس :  https://upload.wikimedia.org/wikipedia/en/1/1c/Deportivo_Alaves_logo.svg ,
+   ليفانتي :  https://upload.wikimedia.org/wikipedia/en/7/7b/Levante_UD_logo.svg ,
+   إلتشي :  https://upload.wikimedia.org/wikipedia/en/5/5d/Elche_CF_logo.svg ,
+   مالقة :  https://upload.wikimedia.org/wikipedia/en/6/6a/M%C3%A1laga_CF.svg ,
+   راسينغ :  https://upload.wikimedia.org/wikipedia/en/5/58/Racing_de_Santander_logo.svg ,
+   باريس سان جيرمان :  https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg ,
+   مانشستر سيتي :  https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg ,
+   غلطة سراي :  https://upload.wikimedia.org/wikipedia/commons/f/f6/Galatasaray_Sports_Club_Logo.svg ,
+   فينورد :  https://upload.wikimedia.org/wikipedia/en/6/6d/Feyenoord_logo.svg ,
+   أستون فيلا :  https://upload.wikimedia.org/wikipedia/en/9/9a/Aston_Villa_FC_new_crest.svg ,
+   سبورتينغ :  https://upload.wikimedia.org/wikipedia/en/e/e1/Sporting_Clube_de_Portugal_%28Logo%29.svg ,
+   كومو :  https://upload.wikimedia.org/wikipedia/en/8/8e/Como_1907_logo.svg ,
+   Arsenal :  https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg ,
+   Liverpool :  https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg ,
+   Chelsea :  https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg ,
+   Inter :  https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg ,
+   AC Milan :  https://upload.wikimedia.org/wikipedia/commons/d/d0/AC_Milan_crest_%28white%29.svg ,
+   Juventus :  https://upload.wikimedia.org/wikipedia/commons/b/bc/Juventus_FC_2017_icon_%28black%29.svg ,
+   Napoli :  https://upload.wikimedia.org/wikipedia/commons/2/28/S.S.C._Napoli_logo.svg ,
+   Roma :  https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg ,
+   Lazio :  https://upload.wikimedia.org/wikipedia/en/1/1a/S.S._Lazio_logo.svg ,
+   Bayern :  https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg ,
+   Dortmund :  https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg ,
+   Leverkusen :  https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg ,
+   Monaco :  https://upload.wikimedia.org/wikipedia/en/8/8b/AS_Monaco_FC.svg ,
+   Lyon :  https://upload.wikimedia.org/wikipedia/en/5/5a/Olympique_Lyonnais_logo.svg 
+};
+
+const SQUAD = [
+  [1,  جوان غارسيا ,  GK ,  حارس مرمى ,  🇪🇸 , 25, 0, 0],
+  [13,  فويتشيخ شتشيسني ,  GK ,  حارس مرمى ,  🇵🇱 , 36, 0, 0],
+  [25,  دومينيك ليفاكوفيتش ,  GK ,  حارس مرمى ,  🇭🇷 , 31, 0, 1],
+  [2,  جواو كانسيلو ,  DF ,  ظهير أيمن ,  🇵🇹 , 32, 0, 1],
+  [3,  أليخاندرو بالدي ,  DF ,  ظهير أيسر ,  🇪🇸 , 22, 1, 0],
+  [5,  باو كوباسي ,  DF ,  قلب دفاع ,  🇪🇸 , 19, 1, 0],
+  [12,  تشافي إسبارت ,  DF ,  ظهير أيمن ,  🇪🇸 , 19, 1, 1],
+  [15,  أندرياس كريستنسن ,  DF ,  قلب دفاع ,  🇩🇰 , 30, 0, 0],
+  [18,  جيرارد مارتين ,  DF ,  قلب دفاع ,  🇪🇸 , 24, 0, 0],
+  [23,  جول كوندي ,  DF ,  ظهير أيمن ,  🇫🇷 , 27, 0, 0],
+  [24,  إيريك غارسيا ,  DF ,  قلب دفاع ,  🇪🇸 , 25, 1, 0],
+  [4,  براين فارينياس ,  MF ,  وسط ,  🇪🇸 , 20, 1, 1],
+  [6,  غافي ,  MF ,  وسط ,  🇪🇸 , 22, 1, 0],
+  [7,  فيرمين لوبيز ,  MF ,  وسط مهاجم ,  🇪🇸 , 23, 1, 0],
+  [8,  بيدري ,  MF ,  وسط ,  🇪🇸 , 23, 0, 0],
+  [16,  رودري ,  MF ,  وسط مدافع ,  🇪🇸 , 30, 0, 1],
+  [20,  داني أولمو ,  MF ,  وسط مهاجم ,  🇪🇸 , 28, 1, 0],
+  [21,  فرينكي دي يونغ ,  MF ,  وسط ,  🇳🇱 , 29, 0, 0],
+  [22,  مارك بيرنال ,  MF ,  وسط مدافع ,  🇪🇸 , 19, 1, 0],
+  [9,  غابرييل جيسوس ,  FW ,  مهاجم ,  🇧🇷 , 29, 0, 1],
+  [10,  لامين يامال ,  FW ,  جناح أيمن ,  🇪🇸 , 19, 1, 0],
+  [11,  رافينيا ,  FW ,  جناح أيسر ,  🇧🇷 , 29, 0, 0],
+  [14,  كريم أديمي ,  FW ,  جناح أيمن ,  🇩🇪 , 24, 0, 1],
+  [17,  أنتوني غوردون ,  FW ,  جناح أيسر ,  🏴 , 25, 0, 1],
+  [19,  روني بردغجي ,  FW ,  جناح أيمن ,  🇸🇪 , 20, 0, 0],
+  [27,  جيسي بيسيوو ,  FW ,  جناح أيسر ,  🇧🇪 , 18, 0, 1],
+  [29,  حمزة عبد الكريم ,  FW ,  مهاجم ,  🇪🇬 , 18, 0, 1]
+];
+
+const STANDINGS = [
+  [ برشلونة , 8, 0, 0, 24], [ أتلتيكو مدريد , 6, 1, 1, 19], [ ريال بيتيس , 6, 1, 1, 19],
+  [ ريال مدريد , 6, 0, 2, 18], [ إشبيلية , 4, 2, 2, 14], [ ريال سوسيداد , 4, 1, 3, 13],
+  [ ألافيس , 3, 2, 3, 11], [ ديبورتيفو , 2, 5, 2, 11], [ سيلتا فيغو , 1, 5, 2, 8],
+  [ أتلتيك بلباو , 2, 2, 2, 8], [ فياريال , 2, 2, 4, 8], [ إسبانيول , 2, 2, 4, 8],
+  [ رايو فايكانو , 2, 2, 3, 8], [ خيتافي , 2, 2, 4, 8], [ راسينغ , 2, 2, 4, 8],
+  [ أوساسونا , 2, 2, 4, 8], [ ليفانتي , 1, 4, 3, 7], [ إلتشي , 1, 3, 4, 6],
+  [ فالنسيا , 1, 2, 5, 5], [ مالقة , 0, 4, 4, 4]
+];
+
+const OTHER_LEAGUES = {
+   البريميرليغ : [[ Arsenal ,5,0,1,15],[ Liverpool ,5,1,0,16],[ Chelsea ,4,1,1,13],[ Man City ,4,2,0,14],[ Brighton ,4,1,1,13],[ Everton ,3,2,1,11],[ Leeds ,2,3,1,9],[ Brentford ,2,2,2,8],[ Hull City ,2,3,1,9],[ Ipswich ,3,0,3,9]],
+   السيري آ : [[ Inter ,5,1,0,16],[ Lazio ,5,1,0,16],[ Roma ,4,2,0,14],[ AC Milan ,3,3,0,12],[ Juventus ,3,2,1,11],[ Napoli ,3,1,2,10],[ Como ,3,2,1,11],[ Atalanta ,3,0,3,9],[ Cagliari ,4,1,1,13],[ Frosinone ,4,1,2,13]],
+   البوندسليغا : [[ Freiburg ,4,1,0,13],[ Dortmund ,4,1,0,13],[ Bayern ,3,2,0,11],[ Leverkusen ,3,1,1,10],[ Leipzig ,3,0,2,9],[ Augsburg ,2,2,1,8],[ Werder Bremen ,2,2,1,8],[ Frankfurt ,2,2,2,8],[ Mainz ,2,1,2,7],[ Elversberg ,2,1,2,7]],
+   الدوري الفرنسي : [[ Monaco ,4,2,0,14],[ Lille ,4,1,1,13],[ Lyon ,3,2,1,11],[ PSG ,3,2,1,11],[ Paris FC ,3,2,1,11],[ Rennes ,4,1,1,13],[ Toulouse ,2,3,2,9],[ Brest ,2,2,2,8],[ Lorient ,2,2,2,8],[ Nice ,2,2,2,8]]
+};
+
+const MATCHES = [
+  { id:  m1 , comp:  UCL , home: false, opp:  فينورد , iso:  2026-09-09T16:45:00Z , score: [5, 1] },
+  { id:  m2 , comp:  LL , home: true, opp:  فالنسيا , iso:  2026-09-06T14:15:00Z , score: [5, 0] },
+  { id:  m3 , comp:  LL , home: true, opp:  ليفانتي , iso:  2026-09-13T14:15:00Z , score: [4, 2] },
+  { id:  m4 , comp:  LL , home: true, opp:  راسينغ , iso:  2026-09-16T19:30:00Z , score: [7, 2] },
+  { id:  m5 , comp:  LL , home: false, opp:  إشبيلية , iso:  2026-09-19T19:00:00Z , score: [3, 1] },
+  { id:  m6 , comp:  LL , home: true, opp:  خيتافي , iso:  2026-10-10T16:30:00Z , score: [3, 0] },
+  { id:  m7 , comp:  UCL , home: false, opp:  غلطة سراي , iso:  2026-10-13T19:00:00Z , score: [4, 1] },
+  { id:  m8 , comp:  LL , home: false, opp:  ريال بيتيس , iso:  2026-10-17T16:30:00Z , probs: [66.2, 17, 16.8] },
+  { id:  m9 , comp:  UCL , home: false, opp:  باريس سان جيرمان , iso:  2026-10-20T19:00:00Z , probs: [39, 21.7, 39.3] },
+  { id:  m10 , comp:  LL , home: true, opp:  ريال مدريد , iso:  2026-10-25T20:00:00Z  },
+  { id:  m11 , comp:  LL , home: true, opp:  ألافيس , iso:  2026-10-31T20:00:00Z  },
+  { id:  m12 , comp:  UCL , home: true, opp:  أستون فيلا , iso:  2026-11-03T20:00:00Z  },
+  { id:  m13 , comp:  LL , home: false, opp:  أتلتيكو مدريد , iso:  2026-11-08T20:00:00Z  },
+  { id:  m14 , comp:  LL , home: true, opp:  فياريال , iso:  2026-11-22T19:00:00Z  },
+  { id:  m15 , comp:  UCL , home: false, opp:  سبورتينغ , iso:  2027-01-20T20:00:00Z  },
+  { id:  m16 , comp:  UCL , home: true, opp:  كومو , iso:  2027-01-27T20:00:00Z  }
+];
+
+const TRANSFERS_IN = [[ رودري , مانشستر سيتي , نحو 60 مليون € ],[ أنتوني غوردون , نيوكاسل , 80 مليون € ],[ كريم أديمي , بوروسيا دورتموند , 29 مليون € ],[ غابرييل جيسوس , أرسنال , 10 ملايين € + إضافات ],[ جيسي بيسيوو , كلوب بروج , 8.5 مليون € ],[ جواو كانسيلو , الهلال , مجاناً ]];
+const TRANSFERS_OUT = [[ روبرت ليفاندوفسكي , شيكاغو فاير , نهاية العقد ],[ فيران توريس , باريس سان جيرمان , نحو 50 مليون € ],[ رونالد أراوخو , ليفربول , إعارة مع خيار شراء ],[ تير شتيغن , أياكس , إعارة موسم كامل ],[ أنسو فاتي , موناكو , 11 مليون € ]];
+const NEWS = [
+  { title:  برشلونة يتصدر الليغا بـ 24 نقطة كاملة , src:  الموقع الرسمي , body:  ثمانية انتصارات من ثماني مباريات مع 24 هدفاً سجلها الفريق. , at: Date.now() - 3600000 },
+  { title:  لامين يامال يواصل التألق في الموسم الجديد , src:  Mundo Deportivo , body:  الجناح الشاب يسجل ويصنع في كل مباراة تقريباً. , at: Date.now() - 7200000 }
+];
+const COMP_NAMES = {  LL :  الدوري الإسباني ,  UCL :  دوري أبطال أوروبا  };
+
+const state = {
+  theme: ls.get( bh_theme ,  dark ),
+  predictions: ls.get( bh_preds , {}),
+  chatMsgs: ls.get( bh_chat , []),
+  profile: ls.get( bh_profile , { name:  كولي , handle:  @blaugrana_fan , bio:    }),
+  ratings: ls.get( bh_ratings , {}),
+  aiConfig: ls.get( bh_ai , { endpoint:   , apiKey:   , model:  gpt-4o-mini  })
+};
+
+// Safe logo renderer (No onerror attributes, avoids browser crashes)
+function crest(team, size = 40) {
+  const initial = team.charAt(0);
+  const url = LOGOS[team];
+  if (!url) {
+    return `<div class="crest-fb" style="width:${size}px;height:${size}px;border-radius:50%;font-size:${Math.round(size*0.4)}px">${initial}</div>`;
+  }
+  return `<img src="${url}" alt="${team}" width="${size}" height="${size}" loading="lazy" style="width:${size}px;height:${size}px;border-radius:50%;background:#fff;padding:2px;object-fit:contain;flex:none" onerror="this.style.display= none ;this.nextElementSibling.style.display= flex ;">
+          <div class="crest-fb" style="width:${size}px;height:${size}px;display:none;border-radius:50%;font-size:${Math.round(size*0.4)}px">${initial}</div>`;
+}
+
+function playerAvatar(p) {
+  const num = p[0], name = p[1];
+  const hash = num * 31 + name.length * 17;
+  const skinTones = [ #f3cfae ,  #e8b894 ,  #d19a6e ,  #a87050 ,  #7a4a2c ];
+  const hairColors = [ #1a120d ,  #3a2616 ,  #6b4a2a ,  #8b5a2b ,  #d4a574 ];
+  const skin = skinTones[hash % skinTones.length];
+  const hair = hairColors[(hash * 3) % hairColors.length];
+  const skinShadow = shadeColor(skin, -18);
+  
+  return `<svg class="avatar-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="bg${num}" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a3a7a"/><stop offset="100%" stop-color="#0a0f1e"/></radialGradient>
+      <linearGradient id="kit${num}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#004d98"/><stop offset="100%" stop-color="#002a5c"/></linearGradient>
+      <linearGradient id="skin${num}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${shadeColor(skin, 8)}"/><stop offset="100%" stop-color="${skinShadow}"/></linearGradient>
+    </defs>
+    <rect width="100" height="100" fill="url(#bg${num})"/>
+    <path d="M8 100 Q14 68 30 60 L70 60 Q86 68 92 100 Z" fill="url(#kit${num})"/>
+    <path d="M32 60 L38 100 L44 100 L44 60 Z" fill="#a50044" opacity=".85"/>
+    <path d="M56 60 L56 100 L62 100 L68 60 Z" fill="#a50044" opacity=".85"/>
+    <path d="M36 60 Q50 68 64 60 L62 55 Q50 61 38 55 Z" fill="#a50044"/>
+    <ellipse cx="50" cy="55" rx="9" ry="6" fill="${skinShadow}"/>
+    <ellipse cx="50" cy="36" rx="20" ry="23" fill="url(#skin${num})"/>
+    <path d="M30 34 Q30 12 50 12 Q70 12 70 34 Q66 22 56 20 Q50 18 44 20 Q34 22 30 34 Z" fill="${hair}"/>
+    <path d="M30 34 Q28 40 30 44 Q32 38 33 34 Z" fill="${hair}"/><path d="M70 34 Q72 40 70 44 Q68 38 67 34 Z" fill="${hair}"/>
+    <ellipse cx="30" cy="38" rx="3" ry="4" fill="${skinShadow}"/><ellipse cx="70" cy="38" rx="3" ry="4" fill="${skinShadow}"/>
+    <path d="M38 34 Q43 31 48 33" stroke="${hair}" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M52 33 Q57 31 62 34" stroke="${hair}" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="43" cy="38" rx="3" ry="3.5" fill="#fff"/><ellipse cx="57" cy="38" rx="3" ry="3.5" fill="#fff"/>
+    <circle cx="43.5" cy="38.5" r="1.8" fill="#1a1a1a"/><circle cx="57.5" cy="38.5" r="1.8" fill="#1a1a1a"/>
+    <circle cx="44" cy="38" r=".6" fill="#fff"/><circle cx="58" cy="38" r=".6" fill="#fff"/>
+    <path d="M50 40 L48 46 Q50 47.5 52 46" stroke="${skinShadow}" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M45 51 Q50 54 55 51" stroke="#8b3a3a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="80" cy="78" r="10" fill="#f5c418" stroke="#000" stroke-width="1.5"/><text x="80" y="83" text-anchor="middle" font-size="11" font-weight="900" fill="#000" font-family="Arial">${num}</text>
+  </svg>`;
+}
+
+function shadeColor(hex, percent) {
+  const num = parseInt(hex.slice(1), 16);
+  let r = (num >> 16) + Math.round(2.55 * percent);
+  let g = ((num >> 8) & 0xff) + Math.round(2.55 * percent);
+  let b = (num & 0xff) + Math.round(2.55 * percent);
+  r = Math.max(0, Math.min(255, r)); g = Math.max(0, Math.min(255, g)); b = Math.max(0, Math.min(255, b));
+  return  #  + ((r << 16) | (g << 8) | b).toString(16).padStart(6,  0 );
+}
+
+function fmtDate(iso) { try { return new Date(iso).toLocaleString( ar-IQ , { weekday:  short , day:  numeric , month:  short , hour:  2-digit , minute:  2-digit  }); } catch { return iso; } }
+function fmtTime(iso) { try { return new Date(iso).toLocaleTimeString( ar-IQ , { hour:  2-digit , minute:  2-digit  }); } catch { return   ; } }
+function relTime(ms) { const m = Math.floor((Date.now() - ms) / 60000); if (m < 1) return  الآن ; if (m < 60) return `قبل ${m} دقيقة`; const h = Math.floor(m / 60); if (h < 24) return `قبل ${h} ساعة`; return `قبل ${Math.floor(h / 24)} يوم`; }
+function nextMatch() { const now = Date.now(); return MATCHES.filter(m => !m.score && new Date(m.iso).getTime() > now).sort((a, b) => new Date(a.iso) - new Date(b.iso))[0]; }
+function recentMatches() { return MATCHES.filter(m => m.score).sort((a, b) => new Date(b.iso) - new Date(a.iso)); }
+function toast(msg, dur = 2200) { const t = el( div ,  toast , msg); document.body.appendChild(t); setTimeout(() => { t.style.opacity =  0 ; t.style.transition =  opacity .3s ; setTimeout(() => t.remove(), 300); }, dur); }
+function openSheet(builder) { const s = $( sheetIn ); s.innerHTML =   ; builder(s); $( sheetBg ).classList.add( on ); document.body.style.overflow =  hidden ; }
+function closeSheet() { $( sheetBg ).classList.remove( on ); document.body.style.overflow =   ; }
+$( sheetBg ).addEventListener( click , e => { if (e.target === $( sheetBg )) closeSheet(); });
+
+function applyTheme(t) { state.theme = t; ls.set( bh_theme , t); if (t ===  auto ) document.documentElement.removeAttribute( data-th ); else document.documentElement.setAttribute( data-th , t); }
+
+const ICONS = {
+  home:  <path d="M3 11l9-8 9 8M5 10v10h14V10"/> , ball:  <circle cx="12" cy="12" r="9"/><path d="M12 8l3 2-1 4h-4l-1-4z"/> ,
+  trophy:  <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0zM17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/> , users:  <circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 21a6 6 0 0112 0M17 19a5 5 0 014-4.9"/> ,
+  more:  <circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/> , bell:  <path d="M6 16v-5a6 6 0 1112 0v5l2 2H4zM10 21h4"/> ,
+  chat:  <path d="M4 5h16v11H9l-5 4z"/> , target:  <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/> , chart:  <path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/> ,
+  star:  <path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/> , news:  <path d="M5 4h12v16H5zM17 8h3v10a2 2 0 01-2 2M8 8h6M8 12h6M8 16h4"/> ,
+  user:  <circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/> , sl:  <path d="M4 6h16M4 12h16M4 18h16"/> , swap:  <path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/> ,
+  send:  <path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/> , info:  <circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 12v4"/> , ai:  <path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4a3 3 0 00-3-3zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 0"/> 
+};
+const ic = (name, size = 22) => `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] ||   }</svg>`;
+
+// Boot sequence safely
+try {
+  applyTheme(state.theme);
+  $( brandLogo ).innerHTML = crest( برشلونة , 38);
+} catch(e) { console.error( Boot error 1: , e); }
+
+const NAV_ITEMS = [
+  { id:  home , label:  الرئيسية , icon:  home  }, { id:  matches , label:  المباريات , icon:  ball  },
+  { id:  standings , label:  الترتيب , icon:  chart  }, { id:  squad , label:  الفريق , icon:  users  }, { id:  more , label:  المزيد , icon:  more  }
+];
+
+try {
+  const n = $( navIn );
+  NAV_ITEMS.forEach(item => {
+    const b = el( button ,  nav-btn );
+    b.innerHTML = ic(item.icon, 22) + `<span>${item.label}</span>`;
+    b.onclick = () => go(item.id);
+    b.dataset.id = item.id;
+    n.appendChild(b);
+  });
+} catch(e) { console.error( Boot error 2: , e); }
+
+function go(id) {
+  document.querySelectorAll( .sc ).forEach(s => s.classList.toggle( on , s.id === id));
+  document.querySelectorAll( .nav-btn ).forEach(b => b.classList.toggle( on , b.dataset.id === id || (id ===  predictions  && b.dataset.id ===  more ) || (id ===  chat  && b.dataset.id ===  more ) || (id ===  profile  && b.dataset.id ===  more ) || (id ===  settings  && b.dataset.id ===  more ) || (id ===  news  && b.dataset.id ===  more )));
+  if (id ===  home ) renderHome();
+  else if (id ===  matches ) renderMatches();
+  else if (id ===  standings ) renderStandings();
+  else if (id ===  squad ) renderSquad();
+  else if (id ===  more ) renderMore();
+  else if (id ===  predictions ) renderPredictions();
+  else if (id ===  chat ) renderChat();
+  else if (id ===  profile ) renderProfile();
+  else if (id ===  settings ) renderSettings();
+  else if (id ===  news ) renderNews();
+  window.scrollTo({ top: 0, behavior:  smooth  });
+}
+
+function renderHome() {
+  const root = $( home ); root.innerHTML =   ;
+  try {
+    const nx = nextMatch();
+    if (nx) {
+      const hero = el( div ,  hero );
+      const probs = nx.probs || estimateProbs(nx);
+      hero.innerHTML = `
+        <span class="hero-tag">${COMP_NAMES[nx.comp]} · المباراة القادمة</span>
+        <div class="hero-teams">
+          <div class="hero-team">${crest(nx.home ?  برشلونة  : nx.opp, 66)}<b>${nx.home ?  برشلونة  : nx.opp}</b></div>
+          <div class="hero-vs">VS</div>
+          <div class="hero-team">${crest(nx.home ? nx.opp :  برشلونة , 66)}<b>${nx.home ? nx.opp :  برشلونة }</b></div>
+        </div>
+        <div class="hero-countdown" data-cd="${nx.iso}">
+          <div><b data-d>--</b><small>يوم</small></div><div><b data-h>--</b><small>ساعة</small></div>
+          <div><b data-m>--</b><small>دقيقة</small></div><div><b data-s>--</b><small>ثانية</small></div>
+        </div>
+        <div class="hero-prob">
+          <i style="width:${probs[0]}%;background:#fff"></i><i style="width:${probs[1]}%;background:rgba(255,255,255,.5)"></i><i style="width:${probs[2]}%;background:#ff6b8a"></i>
+        </div>
+        <div class="hero-prob-labels">
+          <span>برشلونة ${probs[0]}%</span><span>تعادل ${probs[1]}%</span><span>${nx.opp} ${probs[2]}%</span>
+        </div>
+        <div style="font-size:12px;margin-top:10px;opacity:.85">${fmtDate(nx.iso)}</div>`;
+      hero.onclick = () => showMatchDetail(nx);
+      root.appendChild(hero);
+      startCountdown(nx.iso);
+    }
+    
+    const stats = el( div ,  grid3 ); stats.style.marginBottom =  12px ;
+    const barca = STANDINGS[0]; const recent = recentMatches().slice(0, 5);
+    [[1,  المركز ], [barca[4],  نقطة ], [`${recent.filter(m => m.score[0] > m.score[1]).length}/${recent.length}`,  فوز آخر 5 ]].forEach(x => {
+      const d = el( div ,  stat ); d.innerHTML = `<b>${x[0]}</b><span>${x[1]}</span>`; stats.appendChild(d);
+    });
+    root.appendChild(stats);
+
+    const rCard = el( div ,  card );
+    rCard.innerHTML = `<div class="ch"><h2>آخر النتائج</h2><a href="#" data-goto="matches">عرض الكل ←</a></div>`;
+    const rl = el( div ,  mlist ); recent.slice(0, 4).forEach(m => rl.appendChild(matchRow(m)));
+    rCard.appendChild(rl); rCard.querySelector( [data-goto] ).onclick = e => { e.preventDefault(); go( matches ); };
+    root.appendChild(rCard);
+
+    const sCard = el( div ,  card );
+    sCard.innerHTML = `<div class="ch"><h2>الترتيب</h2><a href="#" data-goto="standings">عرض الكل ←</a></div>`;
+    sCard.appendChild(standingsTable(STANDINGS.slice(0, 5)));
+    sCard.querySelector( [data-goto] ).onclick = e => { e.preventDefault(); go( standings ); };
+    root.appendChild(sCard);
+  } catch(e) { root.innerHTML = `<div class="notice err"><div>حدث خطأ في تحميل البيانات: ${e.message}</div></div>`; }
+}
+
+function startCountdown(iso) {
+  clearInterval(window.__cdTimer);
+  const target = new Date(iso).getTime();
+  const wrap = document.querySelector( [data-cd] );
+  if (!wrap) return;
+  const dEl = wrap.querySelector( [data-d] ), hEl = wrap.querySelector( [data-h] ), mEl = wrap.querySelector( [data-m] ), sEl = wrap.querySelector( [data-s] );
+  const tick = () => {
+    const diff = target - Date.now();
+    if (diff <= 0) { dEl.textContent =  00 ; hEl.textContent =  00 ; mEl.textContent =  00 ; sEl.textContent =  00 ; return; }
+    dEl.textContent = String(Math.floor(diff / 86400000)).padStart(2,  0 );
+    hEl.textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,  0 );
+    mEl.textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,  0 );
+    sEl.textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,  0 );
+  };
+  tick(); window.__cdTimer = setInterval(tick, 1000);
+}
+
+function estimateProbs(m) {
+  const barcaPpg = STANDINGS[0][4] / 8;
+  const oppRow = STANDINGS.find(t => t[0] === m.opp);
+  const oppPpg = oppRow ? oppRow[4] / (oppRow[1] + oppRow[2] + oppRow[3]) : 1.6;
+  const diff = barcaPpg - oppPpg; const homeAdv = m.home ? 0.15 : -0.15;
+  const pWin = Math.max(30, Math.min(75, 50 + diff * 25 + homeAdv * 40));
+  const pDraw = 20 + Math.random() * 5; const pLoss = 100 - pWin - pDraw;
+  return [Math.round(pWin), Math.round(pDraw), Math.round(pLoss)];
+}
+
+function matchRow(m) {
+  const d = el( div ,  mrow );
+  const [barca, opp] = m.home ? [ برشلونة , m.opp] : [m.opp,  برشلونة ];
+  const bs = m.score ? (m.home ? m.score[0] : m.score[1]) : null;
+  const os = m.score ? (m.home ? m.score[1] : m.score[0]) : null;
+  const w1 = m.score ? (bs > os ?  winner  : bs < os ?  loser  :   ) :   ;
+  const w2 = m.score ? (os > bs ?  winner  : os < bs ?  loser  :   ) :   ;
+  d.innerHTML = `
+    <div class="mrow-t"><b>${m.score ?  FT  : new Date(m.iso).toLocaleDateString( ar-IQ , { day:  numeric , month:  short  })}</b>${m.score ?    : fmtTime(m.iso)}</div>
+    <div class="mrow-teams">
+      <div class="mrow-team">${crest(barca, 24)}<span>${barca}</span></div>
+      <div class="mrow-team">${crest(opp, 24)}<span>${opp}</span></div>
+    </div>
+    <div class="mrow-sc"><span class="${w1}">${m.score ? bs :  - }</span><span class="${w2}">${m.score ? os :  - }</span></div>`;
+  d.onclick = () => showMatchDetail(m); return d;
+}
+
+function standingsTable(rows, showZones = true) {
+  const wrap = el( div ,  standings );
+  const header = el( div ,  stand-row hd );
+  header.innerHTML =  <span>#</span><span>الفريق</span><span>لعب</span><span>ف</span><span>ت</span><span>خ</span><span>نقاط</span> ;
+  wrap.appendChild(header);
+  rows.forEach((r, i) => {
+    const row = el( div ,  stand-row ); if (r[0] ===  برشلونة ) row.classList.add( me );
+    row.innerHTML += `
+      <span class="stand-rk">${i + 1}</span>
+      <div class="stand-team">${crest(r[0], 22)}<span>${r[0]}</span></div>
+      <span class="stand-num">${r[1] + r[2] + r[3]}</span><span class="stand-num">${r[1]}</span>
+      <span class="stand-num">${r[2]}</span><span class="stand-num">${r[3]}</span><span class="stand-pts">${r[4]}</span>`;
+    row.style.cursor =  pointer ; row.onclick = () => showTeamDetail(r[0], i); wrap.appendChild(row);
+  });
+  return wrap;
+}
+
+function renderMatches() {
+  const root = $( matches ); root.innerHTML =  <h1 style="margin-bottom:16px">المباريات</h1> ;
+  const upCard = el( div ,  card ); upCard.innerHTML =  <h2 style="margin-bottom:12px">القادمة</h2> ;
+  const upList = el( div ,  mlist ); MATCHES.filter(m => !m.score).sort((a, b) => new Date(a.iso) - new Date(b.iso)).forEach(m => upList.appendChild(matchRow(m)));
+  upCard.appendChild(upList); root.appendChild(upCard);
+  const reCard = el( div ,  card ); reCard.innerHTML =  <h2 style="margin-bottom:12px">النتائج</h2> ;
+  const reList = el( div ,  mlist ); recentMatches().forEach(m => reList.appendChild(matchRow(m)));
+  reCard.appendChild(reList); root.appendChild(reCard);
+}
+
+function renderStandings() {
+  const root = $( standings ); root.innerHTML =  <h1 style="margin-bottom:16px">الدوري</h1> ;
+  const tabs = el( div ,  tabs ); const leagues = [[ الليغا , STANDINGS], ...Object.entries(OTHER_LEAGUES)]; let activeLg =  الليغا ;
+  leagues.forEach(([name]) => {
+    const b = el( button , name === activeLg ?  on  :   , name);
+    b.onclick = () => { activeLg = name; tabs.querySelectorAll( button ).forEach(x => x.classList.toggle( on , x.textContent === name)); renderLeagueBody(root, name, leagues); };
+    tabs.appendChild(b);
+  });
+  root.appendChild(tabs); renderLeagueBody(root, activeLg, leagues);
+}
+
+function renderLeagueBody(root, lgName, leagues) {
+  root.querySelectorAll( .league-body ).forEach(x => x.remove());
+  const entry = leagues.find(([n]) => n === lgName); const rows = entry ? entry[1] : STANDINGS;
+  const body = el( div ,  league-body );
+  body.appendChild(standingsTable(rows)); root.appendChild(body);
+}
+
+let squadFilter =  all ;
+function renderSquad() {
+  const root = $( squad ); root.innerHTML =  <h1 style="margin-bottom:16px">الفريق</h1> ;
+  const chips = el( div ,  chips );
+  [[ all ,  الكل ], [ GK ,  الحراس ], [ DF ,  الدفاع ], [ MF ,  الوسط ], [ FW ,  الهجوم ]].forEach(([k, v]) => {
+    const b = el( button ,  chip  + (k === squadFilter ?   on  :   ), v);
+    b.onclick = () => { squadFilter = k; renderSquad(); }; chips.appendChild(b);
+  });
+  root.appendChild(chips);
+  const grid = el( div ,  squad-grid );
+  SQUAD.filter(p => squadFilter ===  all  || p[2] === squadFilter).forEach(p => {
+    const c = el( div ,  pcard );
+    c.innerHTML = `<div class="num">#${p[0]}</div><div class="avatar">${playerAvatar(p)}</div><div class="name">${p[1]}</div><div class="pos">${p[4]} ${p[3]} · ${p[5]} سنة</div>`;
+    c.onclick = () => showPlayerDetail(p); grid.appendChild(c);
+  });
+  root.appendChild(grid);
+}
+
+function renderMore() {
+  const root = $( more ); root.innerHTML =  <h1 style="margin-bottom:16px">المزيد</h1> ;
+  const card = el( div ,  card pad0 );
+  [ { id:  predictions , label:  التوقعات , icon:  target  }, { id:  chat , label:  المحادثة , icon:  chat  }, { id:  news , label:  الأخبار , icon:  news  }, { id:  profile , label:  ملفي , icon:  user  }, { id:  settings , label:  الإعدادات , icon:  sl  } ].forEach(t => {
+    const r = el( div ,  row ); r.style.cssText =  padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:12px ;
+    r.innerHTML = `<span style="color:var(--acc);flex:none">${ic(t.icon, 24)}</span><div style="flex:1"><b style="display:block;font-size:14px">${t.label}</b></div><span class="mut">‹</span>`;
+    r.onclick = () => go(t.id); card.appendChild(r);
+  });
+  root.appendChild(card);
+}
+
+function renderPredictions() {
+  const root = $( predictions );
+  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">توقعاتي</h1> ;
+  const card = el( div ,  card ); card.innerHTML =  <h2 style="margin-bottom:12px">توقع نتائج المباريات القادمة</h2> ;
+  MATCHES.filter(m => !m.score).sort((a, b) => new Date(a.iso) - new Date(b.iso)).forEach(m => {
+    const row = el( div ,  row ); const p = state.predictions[m.id] || [  ,   ];
+    row.innerHTML = `<span style="flex:1;font-size:13px">${m.home ?  برشلونة  : m.opp}</span><input type="number" style="width:40px;padding:4px;text-align:center" value="${p[0]}" onchange="window.__savePred( ${m.id} ,0,this.value)"><span style="margin:0 8px">-</span><input type="number" style="width:40px;padding:4px;text-align:center" value="${p[1]}" onchange="window.__savePred( ${m.id} ,1,this.value)"><span style="flex:1;text-align:left;font-size:13px">${m.home ? m.opp :  برشلونة }</span>`;
+    card.appendChild(row);
+  });
+  root.appendChild(card);
+}
+
+window.__backToMore = () => go( more );
+window.__savePred = (id, i, val) => { if(!state.predictions[id]) state.predictions[id] = [  ,  ]; state.predictions[id][i] = val; ls.set( bh_preds , state.predictions); toast( تم الحفظ ✓ ); };
+
+function renderChat() {
+  const root = $( chat );
+  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">المحادثة</h1> ;
+  const card = el( div ,  card pad0 ); card.style.padding =  14px ;
+  const box = el( div ,  chat-box );
+  state.chatMsgs.slice(-50).forEach(m => {
+    const d = el( div ,  msg   + (m.me ?  me  :  other ));
+    d.innerHTML = `${m.me ?    : `<div class="nm">${m.n}</div>`}${m.t}`; box.appendChild(d);
+  });
+  card.appendChild(box);
+  const form = el( div ); form.style.cssText =  display:flex;gap:8px ;
+  const inp = el( input ); inp.placeholder =  اكتب رسالة… ; inp.style.cssText =  flex:1;padding:12px 16px;border-radius:24px;margin-top:8px ;
+  const send = el( button ,  btn ); send.style.cssText =  width:auto;padding:12px 16px;border-radius:24px;margin-top:8px ; send.innerHTML = ic( send , 20);
+  send.onclick = () => {
+    if (!inp.value.trim()) return;
+    const msg = { n: state.profile.name, t: inp.value.trim(), me: true };
+    state.chatMsgs.push(msg); ls.set( bh_chat , state.chatMsgs); box.appendChild(el( div ,  msg me , msg.t)); inp.value =   ; box.scrollTop = box.scrollHeight;
+  };
+  form.appendChild(inp); form.appendChild(send); card.appendChild(form); root.appendChild(card);
+}
+
+function renderProfile() {
+  const root = $( profile );
+  root.innerHTML = `<button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button>
+    <h1 style="margin-bottom:16px">ملفي</h1>
+    <div class="card" style="text-align:center;padding:24px">
+      <div style="width:96px;height:96px;margin:0 auto 12px;border-radius:50%;background:linear-gradient(135deg,#004d98,#a50044);display:grid;place-items:center;font-size:36px;font-weight:900;color:#fff">${state.profile.name.charAt(0)}</div>
+      <b style="display:block;font-size:22px">${state.profile.name}</b>
+      <div class="mut" style="margin-top:4px">${state.profile.handle}</div>
+    </div>`;
+}
+
+function renderSettings() {
+  const root = $( settings );
+  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">الإعدادات</h1> ;
+  const themeCard = el( div ,  card ); themeCard.innerHTML =  <h2 style="margin-bottom:12px">المظهر</h2> ;
+  const themeTabs = el( div ,  tabs );
+  [[ dark ,  ليلي ], [ light ,  نهاري ]].forEach(([k, v]) => {
+    const b = el( button , state.theme === k ?  on  :   , v); b.onclick = () => { applyTheme(k); renderSettings(); }; themeTabs.appendChild(b);
+  });
+  themeCard.appendChild(themeTabs); root.appendChild(themeCard);
+  
+  const aiCard = el( div ,  card );
+  aiCard.innerHTML = `<h2 style="margin-bottom:8px">الذكاء الاصطناعي</h2><div class="notice info"><div>أضف مفتاح API هنا لتشغيل ميزة التلخيص.</div></div>`;
+  const keyInp = el( input ); keyInp.type =  password ; keyInp.value = state.aiConfig.apiKey; keyInp.placeholder =  sk-... ;
+  const saveAI = el( button ,  btn ,  حفظ المفتاح ); saveAI.style.marginTop =  12px ;
+  saveAI.onclick = () => { state.aiConfig.apiKey = keyInp.value; ls.set( bh_ai , state.aiConfig); toast( تم الحفظ ); };
+  aiCard.appendChild(el( label , null,  المفتاح )); aiCard.appendChild(keyInp); aiCard.appendChild(saveAI); root.appendChild(aiCard);
+}
+
+function renderNews() {
+  const root = $( news );
+  root.innerHTML =  <button class="btn ghost" style="width:auto;margin-bottom:14px" onclick="window.__backToMore()">‹ الأدوات</button><h1 style="margin-bottom:16px">الأخبار</h1> ;
+  NEWS.forEach(n => {
+    const c = el( div ,  card );
+    c.innerHTML = `<h3>${n.title}</h3><div class="mut" style="font-size:12px;margin-bottom:8px">${n.src}</div><div style="font-size:14px;">${n.body}</div>`;
+    root.appendChild(c);
+  });
+}
+
+function showMatchDetail(m) {
+  openSheet(s => {
+    const [barca, opp] = m.home ? [ برشلونة , m.opp] : [m.opp,  برشلونة ];
+    s.innerHTML = `
+      <div style="text-align:center;margin-bottom:16px">
+        <div class="mut" style="margin-bottom:8px">${COMP_NAMES[m.comp]} · ${fmtDate(m.iso)}</div>
+        <div style="display:flex;justify-content:space-around;align-items:center;margin:16px 0">
+          <div style="flex:1;text-align:center">${crest(barca, 60)}<div style="margin-top:6px;font-weight:700">${barca}</div></div>
+          <div style="font-size:24px;font-weight:800;color:var(--mut)">${m.score ? `${m.score[0]} - ${m.score[1]}` :  VS }</div>
+          <div style="flex:1;text-align:center">${crest(opp, 60)}<div style="margin-top:6px;font-weight:700">${opp}</div></div>
+        </div>
+      </div>`;
+    const close = el( button ,  btn ,  إغلاق ); close.style.marginTop =  20px ; close.onclick = closeSheet; s.appendChild(close);
+  });
+}
+
+function showPlayerDetail(p) {
+  openSheet(s => {
+    s.innerHTML = `
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+        <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:#000">${playerAvatar(p)}</div>
+        <div><b style="font-size:22px">${p[1]}</b><div class="mut">${p[4]} ${p[3]} · #${p[0]}</div></div>
+      </div>`;
+    const close = el( button ,  btn ,  إغلاق ); close.style.marginTop =  16px ; close.onclick = closeSheet; s.appendChild(close);
+  });
+}
+
+function showTeamDetail(team, idx) {
+  openSheet(s => {
+    const row = STANDINGS.find(t => t[0] === team) || [team, 0, 0, 0, 0];
+    s.innerHTML = `<div style="text-align:center;margin-bottom:16px">${crest(team, 80)}<h2 style="margin-top:12px">${team}</h2><div class="mut">المركز ${idx + 1} · ${row[4]} نقطة</div></div>`;
+    const close = el( button ,  btn ,  إغلاق ); close.style.marginTop =  16px ; close.onclick = closeSheet; s.appendChild(close);
+  });
+}
+
+$( themeBtn ).onclick = () => { applyTheme(state.theme ===  dark  ?  light  :  dark ); if (document.getElementById( settings ).classList.contains( on )) renderSettings(); toast( تم تغيير المظهر ); };
+$( settingsBtn ).onclick = () => go( settings );
+document.addEventListener( keydown , e => { if (e.key ===  Escape ) closeSheet(); });
+
+go( home );
+})();
+</script>
+</body>
+</html>
